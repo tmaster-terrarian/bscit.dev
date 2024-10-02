@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tumblr media viewer</title>
+    <!--<link href="/style.css" rel="stylesheet" type="text/css" media="all">-->
+  </head>
+  <body>
+    <noscript>Javascript is required to use this page.</noscript>
+    
+    <h1>Tumblr Media Viewer</h1>
+    <form>
+      <label for="tpage">Blogname (pressing enter won't work, click off to confirm):</label>
+      <input type="text" id="tpage" name="tpage" onchange="getBlog(this.value)"><br><hr>
+    </form>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      // var url = 'bscit';
+      
+      function getBlog(val) {
+        document.getElementById('tumblrfeed').innerHTML = '';
+        $.getJSON('http://'+val+'.tumblr.com/api/read/json?callback=?', function(data) {
+          $.each(data.posts, function(i,posts) {
+              displayTextPost(posts);
+          });
+          // displayTextPost(data.posts[0])
+        });
+      }
+      
+      function displayTextPost(posts) {
+        if(posts == null) return;
+        if(posts['regular-body'].includes("img") && typeof(posts['reblogged-from-url']) == 'undefined')
+          $('#tumblrfeed').append('<p>' + posts['regular-body'].replace('img', 'img width=480') + '</p><a href="' + posts['url'] + '">orig</a><hr>');
+      }
+    </script>
+    
+    <div id="tumblrfeed"></div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+.linktwitter:link, .linktwitter:visited
+{
+  color:rgb(28, 154, 239);
+}
+.linktwitter:hover
+{
+  color:rgb(68, 194, 279);
+}
+
+.linkgithub:link, .linkgithub:visited
+{
+  color:rgb(200, 206, 212);
+}
+.linkgithub:hover
+{
+  color:rgb(240, 246, 252);
+}
+
+.linkitch:link, .linkitch:visited
+{
+  color:rgb(247, 90, 90);
+}
+.linkitch:hover
+{
+  color:rgb(287, 130, 130);
+}
+
+.linksc:link, .linksc:visited
+{
+  color:rgb(255, 118, 0);
+}
+.linksc:hover
+{
+  color:rgb(255, 158, 40);
+}
+
+.linkyt:link, .linkyt:visited
+{
+  color:rgb(255, 0, 0);
+}
+.linkyt:hover
+{
+  color:rgb(255, 40, 40);
+}
+
+.linknc:link, .linknc:visited
+{
+  color:rgb(224, 155, 50);
+}
+.linknc:hover
+{
+  color:rgb(264, 195, 90);
+}
+
+.linktwitch:link, .linktwitch:visited
+{
+  color:#8d41fe;
+}
+.linktwitch:hover
+{
+  color:#b569ff;
+}

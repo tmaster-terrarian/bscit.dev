@@ -1,0 +1,71 @@
+button
+{
+  font-family: monospace;
+}
+
+.dropdownarrow
+{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 5px;
+  transition: 0.2s;
+}
+
+.accordionbody
+{
+  width: 100%;
+  margin: 0;
+}
+
+.accordion
+{
+  position: relative;
+  background-color: rgb(40, 71, 75);
+  color: #ccc;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  transition: 0.4s;
+}
+
+.accordion:hover
+{
+  background-color: rgb(60, 91, 95);
+}
+.active
+{
+  background-color: rgb(50, 81, 85);
+}
+
+.panel
+{
+  position: relative;
+  text-align: left;
+  color: white;
+  padding: 0 1ch 0 1ch;
+  background-color: rgb(8, 14, 20);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s;
+  margin-bottom: 5px;
+}
+.panel p
+{
+  margin: 0.5em 0.5ch;
+  line-height: 1.25em;
+  color: #E6EDF3;
+}
+
+.accordionbottom
+{
+  position: relative;
+  bottom: 0;
+  height: 2px;
+  border-width: 0;
+  background-color: rgb(40, 71, 75);
+  margin: 0.5em -1ch 0 -1ch;
+  transition: bottom 0.2s;
+}

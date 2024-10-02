@@ -1,0 +1,49 @@
+.tool
+{
+  margin-bottom: 1ch;
+  width: 100%;
+  display: block;
+  background-color: rgb(8, 14, 20, 0.75);
+  padding-left: calc(0.5ch + 1px);
+}
+.tool:after
+{ 
+  content: " "; 
+  display: block;
+  clear: both;
+}
+
+.tool div
+{
+  float: left;
+}
+
+.tool div.preview
+{
+  width: 165px;
+  position: relative;
+  margin-top: 0.5ch;
+}
+
+.tool div.preview img
+{
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px #c0c0c0 solid;
+}
+
+.tool div.info
+{
+  width: calc(100% - 165px - 1ch);
+  box-sizing: border-box;
+  margin-left: 1ch;
+  padding: 0 1ch;
+}
+
+.tool div.info hr
+{
+  border: none;
+  border-top: 1px #c0c0c0 solid;
+  margin-block-start: 0;
+}
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>works - bscit.dev</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/tabs.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/works.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      figure {
+        text-align: center;
+        display: block;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
+      figure .art-img {
+        object-fit: cover;
+        aspect-ratio: 1;
+        width: 100%;
+        filter: none;
+        transition: filter 0.2s cubic-bezier(0, 0, 0.2, 1);
+      }
+      figure div {
+        width: min(480px, 100%);
+        margin: auto;
+        overflow: hidden;
+        border: 2px solid white;
+        border-color: white black black white;
+        padding: 0;
+        line-height: 0;
+      }
+      figure .cw {
+        display: inline-block;
+        margin: 2px auto 4px auto;
+        background-color: #00000088; /* 50% opacity */
+        padding: 2px 4px;
+        padding-bottom: 3px;
+      }
+      .blur {
+        filter: blur(16px) !important;
+      }
+      figure .auto {
+        aspect-ratio: auto;
+      }
+      .art-aspect-button
+      {
+        background-color: #37946e;
+        color: white;
+        border: none;
+      }
+      .art-aspect-button:active
+      {
+        background-color: #287d64;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div id="container">
+      <noscript>Please enable Javascript to use this page.</noscript>
+      <h1 style="position: relative">creative works
+        <div class="bgSlider" style="position: absolute; display:inline; text-align: right; right: 12px; top: -20%; font-size: 0.75rem"><p id="bgRangeOutput">bg speed: </p><input style="position: relative; top: -8px; right: 2px" type="range" min="0" max="100" value="100" class="slider" id="bgRange" oninput="sliderInput(this.value)">
+        </div>
+      </h1>
+      
+      <div class="slidetextbox"></div>
+      <script src="/js/slidetext.js"></script>
+      
+      <table>
+        <tbody>
+          <tr>
+            <td id="maintd">
+              <div style="margin: 5px">
+                <div class="tab">
+                  <button class="tablinks" onclick="openTab(event, 'arttab')" id="defaultOpenTab"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="tab-icon">
+                    <path d="M15.993 1.385a1.87 1.87 0 012.623 2.622l-4.03 5.27a12.749 12.749 0 01-4.237 3.562 4.508 4.508 0 00-3.188-3.188 12.75 12.75 0 013.562-4.236l5.27-4.03zM6 11a3 3 0 00-3 3 .5.5 0 01-.72.45.75.75 0 00-1.035.931A4.001 4.001 0 009 14.004V14a3.01 3.01 0 00-1.66-2.685A2.99 2.99 0 006 11z" />
+                  </svg> Art</button>
+                  <button class="tablinks" onclick="openTab(event, 'musictab')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="tab-icon">
+                    <path fill-rule="evenodd" d="M17.721 1.599a.75.75 0 01.279.584v11.29a2.25 2.25 0 01-1.774 2.198l-2.041.442a2.216 2.216 0 01-.938-4.333l2.662-.576a.75.75 0 00.591-.734V6.112l-8 1.73v7.684a2.25 2.25 0 01-1.774 2.2l-2.042.44a2.216 2.216 0 11-.935-4.33l2.659-.574A.75.75 0 007 12.53V4.237a.75.75 0 01.591-.733l9.5-2.054a.75.75 0 01.63.149z" clip-rule="evenodd" />
+                  </svg> Music</button>
+                  <button class="tablinks" onclick="openTab(event, 'gamestab')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="tab-icon">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                  </svg> Games</button>
+                  <button class="tabsquare">X</button>
+                  <button class="tabsquare" onclick="closeTabs(event)">_</button>
+                </div>
+                
+                <div id="tabholder">
+                  <div id="arttab" class="tabcontent">
+                    <h3>Art</h3>
+                    <p>All of the art that I have posted (on Tumblr)<br>(really this is just a tumblr media feed but it works)</p>
+                    <!--<p style="color: #ABABAB"><i>warning: this page will load a lot of images. It is not recommended to view it on slow or limited connections.</i></p>-->
+                    <button class="art-aspect-button" onclick="toggleAspect(event)">Set images to original aspect</button>
+                    <button class="art-aspect-button" onclick="decrementPage()">prev</button>
+                    <span class="art-aspect-button" style="padding: 1px 6px" id="pageNum">1</span>
+                    <button class="art-aspect-button" onclick="incrementPage()">next</button>
+                    <script>
+                      var enabled = false;
+                      var imgs = document.getElementsByClassName("art-img");
+                      
+                      toggleAspect = function(evt)
+                      {
+                        enabled = !enabled;
+                        if(enabled == true)
+                        {
+                          for (i = 0; i < imgs.length; i++) {
+                            imgs[i].classList.add("auto");
+                          }
+                          evt.currentTarget.innerHTML = "Set images to square aspect"
+                        }
+                        else
+                        {
+                          for (i = 0; i < imgs.length; i++) {
+                            imgs[i].classList.remove("auto");
+                          }
+                          evt.currentTarget.innerHTML = "Set images to original aspect"
+                        }
+                      };
+                    </script>
+                    <div id="tumblrfeed">
+                    </div>
+                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                    <!--[if IE]>
+                    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                    <![endif]-->
+                    <script src="/js/works-art-getter.js"></script>
+                  </div>
+                  <script src="/js/bgSlider.js"></script>
+                  
+                  <div id="musictab" class="tabcontent">
+                    <h3>Music</h3>
+                    <p>A collection of music that I've made</p>
+                    <p>All of the pieces I've made so far have been in a similar genre, but I may expand into other genres one day!</p>
+                    <div class="volume-control">
+                      <div class="controls">
+                        <button class="volume-icon" title="mute/unmute">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="button-icon">
+                            <path d="M10 3.75a.75.75 0 00-1.264-.546L4.703 7H3.167a.75.75 0 00-.7.48A6.985 6.985 0 002 10c0 .887.165 1.737.468 2.52.111.29.39.48.7.48h1.535l4.033 3.796A.75.75 0 0010 16.25V3.75zM15.95 5.05a.75.75 0 00-1.06 1.061 5.5 5.5 0 010 7.778.75.75 0 001.06 1.06 7 7 0 000-9.899z" />
+                            <path d="M13.829 7.172a.75.75 0 00-1.061 1.06 2.5 2.5 0 010 3.536.75.75 0 001.06 1.06 4 4 0 000-5.656z" />
+                          </svg>
+                        </button>
+                        <input type="range" class="volumerange" max="100" value="75">
+                        <span class="voloutput">75%&nbsp;</span>
+                      </div>
+                    </div>
+                    <div id="tracks"></div>
+                    <script src="/js/audio-player-generator.js"></script>
+                    <script>
+                      createTrackPlayer("NETWORK", "02/06/24", "wav", true);
+                      createTrackPlayer("rootkit", "04/12/23", "wav", true);
+                      createTrackPlayer("Boneswarmerator", "02/28/23", "wav", true);
+                    </script>
+                    <script src="/js/audio-player.js"></script>
+                  </div>
+                  
+                  <div id="gamestab" class="tabcontent">
+                    <h3>Games</h3>
+                    <p>Games ive developed will go here</p>
+                    <div id="games">
+                      <div class="gameholder">
+                        <table>
+                          <tr>
+                            <td class="titletd">
+                              <a style="float:right" title="See on Itch.io" href="https://tmasterterrarian.itch.io/beebo-clone" target="_blank"><img class="game-cover beebo-cover" src="/images/bee-yourself-cover-5x3.png" height="120" style="background-color: #ccc"></a>
+                              <h1>YOU&nbsp;SHOULD BEE&nbsp;YOURSELF... <b>NOW!!</b></h1>
+                              <span><b>nickname:</b>&nbsp;beebo <b>demo&nbsp;release&nbsp;date:</b>&nbsp;09/02/22<!--<br>[<a href="/ignorethis/beebo-b665e3d/" target="_blank">play&nbsp;online</a>]--></span>
+                              <hr style="margin-top: 1.2em; margin-bottom: 1.3em; border: none; height: 2px; background-color: #a4003b">
+                              <blockquote cite="https://tmasterterrarian.itch.io/beebo-clone">"Epic game play as bee girl and kill every"</blockquote>
+                              <p>"Bee Yourself" (aka "beebo", "Bee Yourself Immediately") Is a game that I am working on and is currently under development. A small (somewhat broken) demo can be found on my Itch page.</p><p>The game is currently being remade from the ground up to be better than ever.</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script src="/js/tabs.js"></script>
+                <script>document.getElementById("defaultOpenTab").click();</script>
+                <noscript>This page will not work without Javascript.</noscript>
+              </div>
+            </td>
+            <td id="menutd"></td>
+          </tr>
+        </tbody>
+      </table>
+      <script src="/js/menu.js"></script>
+    </div>
+  </body>
+</html>

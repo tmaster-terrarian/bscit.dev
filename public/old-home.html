@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bscit.dev</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/links.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body id="body">
+    <!--<script>NekoType="calico"</script>-->
+    <!--<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>-->
+    <div id="container">
+      <noscript>Please enable Javascript to use this website properly.</noscript>
+      <h1 style="position: relative"><img src="images/flag0.png"> bscit's cave <img src="images/flag1.png">
+        <div class="bgSlider" style="position: absolute; display:inline; text-align: right; right: 12px; top: -20%; font-size: 0.75rem"><p id="bgRangeOutput">bg speed: </p><input style="position: relative; top: -8px; right: 2px" type="range" min="0" max="100" value="100" class="slider" id="bgRange" oninput="sliderInput(this.value)">
+        </div>
+        <script src="/js/bgSlider.js"></script>
+      </h1>
+      
+      <div class="slidetextbox"></div>
+      <script src="/js/slidetext.js"></script>
+      
+      <table>
+        <tbody>
+          <tr>
+            <td id="maintd" style="position: relative">
+              <div class="box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="float: left; height: 1.25em">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" />
+                </svg>
+                <span style="display: block; padding-left: 3ch">This web site is built for <a href="https://www.chromium.org/Home/" target="_blank" style="color:white; text-decoration: underline">Chromium</a>-based browsers on desktop. Mobile and Firefox users be warned, things might break!</span>
+              </div>
+              <div class="box">
+                <div>
+                  <h3 style="display: block; margin-top: 0"><i>current status: <span id="status">loading...</span></i></h3>
+                  <p style="text-align: left; margin-bottom: 0">Hello, and welcome to my website!<br>I am mainly an artist and game developer, but I'm learning music too<br><br>It would be pretty cool if you checked out my stuff while you're here :D<br>I post whatever, mainly art, and on rare occasion game progress or music as well!</p>
+                </div>
+              </div>
+              <div class="box">
+                <div>
+                  <h4>social platforms</h4>
+                  <a title="@bscit_dev" href="https://twitter.com/bscit_dev" target ="_blank" class="linktwitch">twitter</a><!--<span style="cursor:default; color:gray"> (low activity)</span>--><span style="cursor:default"> | </span>
+                  <a title="bscit" href="https://www.tumblr.com/bscit" target ="_blank" class="linkitch">tumblr</a><!--<span style="cursor:default"> | </span>-->
+                  <!--<a title="@bscit.bsky.social" href="https://bsky.app/profile/bscit.bsky.social" target ="_blank" class="linktwitter">bluesky</a>--><!--<span style="cursor:default"> | </span>-->
+                  <!--<span style="cursor:default"> | </span><a href="https://cohost.org/bscit-art" target ="_blank">cohost</a> <img src="images/NEW.png"><span style="cursor:default"> | </span>-->
+                  <!--<a href="https://mastodon.art/@bscit" target ="_blank">mastodon</a> <img src="images/NEW.png">-->
+                </div>
+              </div>
+              
+            </td>
+            
+            <td id="menutd"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="footer">
+        <div class="box centerbox" style="margin: 8px">
+          <h4 style="display: inline-block; margin: 0; margin-top: 10px"><i>other places you can find me on the net</i>:</h4>
+          <p style="display: inline-block;">
+            <a href="https://github.com/tmaster-terrarian" target ="_blank" class="linkgithub">Github</a><span style="cursor:default"> | </span>
+            <a href="https://ko-fi.com/bscit" target ="_blank" class="linksc">Ko-Fi</a><span style="cursor:default"> | </span>
+            <a href="https://tmasterterrarian.itch.io" target ="_blank" class="linkitch">Games</a><span style="cursor:default"> | </span>
+            <a href="https://soundcloud.com/bscit" target ="_blank" class="linksc">Music</a><span style="cursor:default"> | </span>
+            <a href="https://www.youtube.com/@bscitdev" target ="_blank" class="linkyt">Youtube</a><span style="cursor:default"> | </span>
+            <a href="https://www.twitch.tv/bscitdv" target ="_blank" class="linktwitch">Twitch</a><span style="cursor:default"> | </span>
+            <a href="https://neocities.org/site/bscit" target ="_blank" class="linknc">Neocities</a>
+          </p>
+        </div>
+      </div>
+      <script> // load the status
+        const statusSpan = document.getElementById("status")
+
+        fetch("/status.txt")
+          .then((res) => res.text())
+          .then((text) => {
+            statusSpan.innerText = text
+            console.log('loaded status text')
+          })
+          .catch((e) => console.error(e));
+      </script>
+      <script src="/js/menu.js"></script>
+    </div>
+  </body>
+</html>

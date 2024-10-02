@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snippets - bscit.dev</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="extra.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .monaco-editor {
+        padding-top: 19px;
+        padding-right: 20px;
+        padding-bottom: 2px;
+        min-width: 100%;
+      }
+      .snipp {
+        max-width: calc(100% - 20px);
+        margin-bottom: 1ch;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=js?skin=sunburst"></script>
+    <link rel="stylesheet" type="text/css" href="prettify.css">
+    <div id="container">
+      <noscript>Please enable Javascript to use this website properly.</noscript>
+      <h1 style="position: relative">code snippets
+        <div class="bgSlider" style="position: absolute; display:inline; text-align: right; right: 12px; top: -20%; font-size: 0.75rem"><p id="bgRangeOutput">bg speed: </p><input style="position: relative; top: -8px; right: 2px" type="range" min="0" max="100" value="100" class="slider" id="bgRange" oninput="sliderInput(this.value)">
+        </div>
+        <script src="/js/bgSlider.js"></script>
+      </h1>
+      
+      <div class="slidetextbox"></div>
+      <script src="/js/slidetext.js"></script>
+      
+      <table>
+        <tbody>
+          <tr>
+            <td id="maintd" style="position: relative">
+              <div class="box" style="padding: 5px; padding-bottom: 0">
+                <div class="accordionbody">
+                  <button class="accordion">Clamp Function (ts)<img class="dropdownarrow" src="images/expand-arrow.svg"></button>
+                  <div class="panel">
+                    <p>Returns a value within the range { /`min`/ ≤ /`val`/ ≤ /`max`/ }.</p>
+<div class="snipp">lang:typescript
+/**
+ * Returns a value within the range { min ≤ val ≤ max }.
+ */
+function Clamp(val:number, min:number, max:number) {
+  return Math.min(Math.max(val, min), max);
+};</div>
+                    <hr class="accordionbottom">
+                  </div>
+                </div>
+                <div class="accordionbody">
+                  <button class="accordion">Approach Function (ts)<img class="dropdownarrow" src="images/expand-arrow.svg"></button>
+                  <div class="panel">
+                    <p>Brings the /`value`/ closer to the /`target`/ by amount /`rate`/.</p>
+<div class="snipp">lang:typescript
+function Approach(val:number, target:number, rate:number) {
+    if (val &lt; target)
+        return Math.min((val + rate), target);
+    else
+        return Math.max((val - rate), target);
+}</div>
+                    <hr class="accordionbottom">
+                  </div>
+                </div>
+                <div class="accordionbody">
+                  <button class="accordion">State Machine via Struct - Gamemaker Language (GMS2.3)<img class="dropdownarrow" src="images/expand-arrow.svg"></button>
+                  <div class="panel">
+                    <p>MAGIC</p>
+<div class="snipp">lang:javascript
+/// CREATE Event ///
+// define the struct states
+states = {
+  // each state is a callable function
+  normal: function() { with(other) { // we have to use with(other) to avoid scope issues (this is not an issue with the array/enum method)
+    // we can do stuff here like check for inputs, apply physics, and switch to other states
+    // switching to another state looks like this:
+    //   state = "another_state";
+  }},
+  another_state: function() { with(other) {
+    // do stuff, then eventually transition back to normal state (if needed)
+  }}
+};
+
+// now we define the variable to control our state
+state = "normal"
+</div>
+
+<div class="snipp">lang:javascript
+/// STEP Event ///
+// we run some code before we run our state to get some information, like getting keyboard input.
+[...]
+
+// now we run our state-specific code
+states[$ state]();
+
+// this odd looking line does this:
+//  it uses a struct accessor to find the function with a name that matches our string (state)
+//  because it is a function, we add parenthesis so that it runs, even though it takes no arguments
+
+// then we do the rest of the step event. (jumping, pausing, cutscene triggers, etc.)
+[...]</div>
+                    <hr class="accordionbottom">
+                  </div>
+                </div>
+                <script src="/js/accordion.js"></script>
+                <script src="/js/md-basic.js"></script>
+              </div>
+            </td>
+            <td id="menutd"></td>
+          </tr>
+        </tbody>
+      </table>
+      <script src="/js/menu.js"></script>
+    </div>
+    <script>
+        var require = { paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs' } };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/editor/editor.main.nls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/editor/editor.main.js"></script>
+
+    <script>
+        // classes
+        class EditorContents
+        {
+            constructor(lang, content)
+            {
+                this.lang = lang
+                this.content = content
+            }
+        }
+    </script>
+
+    <script>
+        require.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs' } });
+
+        const editors = Array.from(document.getElementsByClassName("snipp"))
+
+        const editorContents = []
+
+        function convertEntities(str) {
+          const symbols = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&apos;"
+          }
+          let newStr = str
+          for (var symbol in symbols) {
+            newStr = newStr.replaceAll(symbol, symbols[symbol])
+          }
+          return newStr;
+        }
+
+        editors.forEach((e, i) => {
+          let str = e.innerHTML
+            .replaceAll("&amp;", "&")
+            .replaceAll("&lt;", "<")
+            .replaceAll("&gt;", ">")
+            .replaceAll("&quot;", '"')
+            .replaceAll("&apos;", "'")
+            .replaceAll(/\:hide\s+.+\n/gm, "")
+          editorContents[i] = new EditorContents(Array.from(str.match(/lang\:\S+/m))[0].replace("lang:", ""), str.replaceAll(/lang\:\S+\n?/gm, "").split("\n"))
+          e.innerHTML = ""
+        })
+
+        require(['vs/editor/editor.main'], function () {
+            monaco.editor.defineTheme('vs-dark-plus', {
+                base: "vs-dark",
+                inherit: true,
+                rules: [
+                    {
+                        token: "function",
+                        foreground: "ffaa00"
+                    },
+                    {
+                        token: "identifier",
+                        foreground: "9CDCFE"
+                    }
+                ],
+                colors: {
+                    "entity.name.function": "#DCDCAA"
+                }
+            })
+            monaco.editor.setTheme('vs-dark')
+
+            editors.forEach((elem, i) => {
+                elem.style.minHeight = "calc(" + ((editorContents[i].content.length) * 20/14) + "em + 21px)"
+
+                var editor = monaco.editor.create(elem, {
+                    value: editorContents[i].content.join("\n"),
+                    language: editorContents[i].lang,
+                    minimap: {
+                        enabled: false
+                    },
+                    scrollbar: {
+                        verticalScrollbarSize: 0
+                    },
+                    scrollBeyondLastLine: false,
+                    bracketPairColorization: {
+                        enabled: true
+                    },
+                    automaticLayout: false,
+                    "semanticHighlighting.enabled": true,
+                    readOnly: true,
+                    dragAndDrop: false,
+                })
+            })
+
+            var libSource = [
+`declare let states = {
+  normal: function() {},
+  another_state: function() {}
+};
+declare let state = "normal";`
+            ].join("\n");
+            monaco.languages.typescript.javascriptDefaults.addExtraLib(libSource);
+        })
+    </script>
+  </body>
+</html>

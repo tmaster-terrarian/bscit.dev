@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビスケット [ bscit.dev ]</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="/style2.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .fucked-up {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .main {
+        width: 1100px;
+      }
+
+      .c1, .c2 {
+        float: left;
+      }
+      .c1 {
+        width: 875px
+      }
+      .c2 {
+        width: 225px;
+      }
+      
+      .nav {
+        width: 100%;
+        height: 300px;
+        background-image: linear-gradient(#4e2055, #e63e4f);
+        border: 1px black solid;
+        box-sizing: border-box;
+        float: left;
+        overflow: hidden;
+        padding: 0.5em;
+      }
+      
+      .nav {
+        color: white;
+        cursor: default;
+        position: relative;
+      }
+      .nav p {
+        position: relative;
+        left: -2ch;
+        transition: left, color 0.05s, 0.05s ease;
+        color: rgba(255, 255, 255, 0);
+        margin: 1px auto 1px 0;
+        padding: 1px 0;
+      }
+      .nav p:hover {
+        left: 0;
+        color: #34eb7a;
+      }
+      .nav a, .nav a:link, .nav a:visited {
+        color: #34eb7a;
+        text-decoration: none;
+      }
+      .nav a:hover {
+        color: #5bfcbc;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      
+      .nav img {
+        display: inline;
+        line-height: 0;
+        margin: -2px 0;
+      }
+      
+      #emb {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fucked-up">
+      <div class="main">
+        <div class="c1">
+          <iframe src="https://free.timeanddate.com/clock/i980gjxj/n137/fn8/ftb/th2/ta1" frameborder="0" width="128" height="18"></iframe>
+        </div>
+        <div class="c2">
+          <div class="nav">
+            <span style="text-align: center; display: block">-[ navigator ]-</span>
+            <p>> <img src="/images/NEW.png"> <a href="">test</a> <img src="/images/NEW.png"></p>
+            <p>> <img src="/images/icons/pen.png"> <a href="">creative works</a> <img src="/images/icons/pen.png"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
