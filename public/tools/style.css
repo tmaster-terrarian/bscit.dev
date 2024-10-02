@@ -3,8 +3,8 @@
   margin-bottom: 1ch;
   width: 100%;
   display: block;
-  background-color: rgb(8, 14, 20, 0.75);
-  padding-left: calc(0.5ch + 1px);
+  background-color: rgba(20, 20, 20, 0.75);
+  padding: 1em;
 }
 .tool:after
 { 
@@ -22,7 +22,6 @@
 {
   width: 165px;
   position: relative;
-  margin-top: 0.5ch;
 }
 
 .tool div.preview img
@@ -34,16 +33,27 @@
 
 .tool div.info
 {
-  width: calc(100% - 165px - 1ch);
   box-sizing: border-box;
-  margin-left: 1ch;
-  padding: 0 1ch;
+  margin-left: 1em;
+  width: calc(100% - 1em - 165px);
+  h3 {
+    margin-block-start: 0;
+  }
 }
 
 .tool div.info hr
 {
   border: none;
-  border-top: 1px #c0c0c0 solid;
+  height: 1px;
+  background-color: #c0c0c0;
+  margin-block-start: 0;
+}
+
+.tool div.info span:first-of-type p
+{
+  display: block;
+  float: right;
+  margin-top: 1rem;
   margin-block-start: 0;
 }
 
