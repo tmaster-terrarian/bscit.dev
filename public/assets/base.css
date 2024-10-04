@@ -12,6 +12,8 @@ html {
 }
 
 body {
+    position: relative;
+
     color: var(--bscit-main-foregroundColor);
     /* background-color: var(--bscit-main-backgroundColor-secondary); */
 
@@ -50,7 +52,7 @@ hr {
     background: #383838;
 }
 
-header {
+header:not(.ignore) {
     padding: 20px calc(1em + 1rem);
 
     border-bottom: 1px solid #383838;
@@ -62,6 +64,27 @@ header {
 
     a:hover {
         color: white;
+    }
+}
+
+footer:not(.ignore) {
+    padding: 20px 1rem;
+    width: 100%;
+
+    border-top: 1px solid #383838;
+
+    position: absolute;
+    top: max(100%, 100vh);
+
+    >div:first-of-type {
+        position: relative;
+        width: min(100%, 38rem);
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    a {
+        text-decoration: none;
     }
 }
 

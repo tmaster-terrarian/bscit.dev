@@ -1,8 +1,8 @@
 function createTrackPlayer(trackname, date, audiotype = "wav", sc = false)
 {
   var sclink = "";
-  if(sc) sclink = `<a href="https://soundcloud.com/bscit/${trackname}" title="Listen on Soundcloud" target="_blank"><img class="song-cover cover-${trackname}" src="/music/${trackname}-cover.png" height="196"></a>`;
-  else sclink = `<a href="/music/${trackname}-cover.png" target="_blank"><img class="song-cover cover-${trackname}" src="/music/${trackname}-cover.png" height="196"></a>`;
+  if(sc) sclink = `<a href="https://soundcloud.com/bscit/${trackname}" title="Listen on Soundcloud" target="_blank"><img class="song-cover cover-${trackname}" src="https://bscit.dev/music/${trackname}-cover.png" height="196"></a>`;
+  else sclink = `<a href="https://bscit.dev/music/${trackname}-cover.png" target="_blank"><img class="song-cover cover-${trackname}" src="https://bscit.dev/music/${trackname}-cover.png" height="196"></a>`;
 
   var html =
 `<div class="songholder">
@@ -15,7 +15,7 @@ function createTrackPlayer(trackname, date, audiotype = "wav", sc = false)
         <h4 class="datespan">${date}</h4>
         <h1>${trackname}</h1>
         <hr style="border: none; height: 2px; background-color: #a4003b">
-        
+
         <div class="audio-player">
           <audio src="/music/${trackname}.${audiotype}" type="audio/${audiotype}"></audio>
           <div class="controls">
