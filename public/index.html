@@ -63,11 +63,24 @@
       h1 {
         font-size: 3rem;
         margin-block: 0;
+
+        /* animation-duration: 0.8s;
+        animation-name: slidein; */
+
+        animation-duration: 0.4s;
+        animation-name: linkfade;
+        animation-fill-mode: backwards;
+        animation-delay: 0;
       }
 
       h2 {
         margin-block: 0;
         padding: 0.5em 0;
+
+        animation-duration: 0.4s;
+        animation-name: linkfade;
+        animation-fill-mode: backwards;
+        animation-delay: 0.15s;
       }
 
       h2 span {
@@ -105,6 +118,34 @@
         to {
           filter: none;
           translate: 0 0;
+        }
+      }
+
+      @keyframes slidein {
+        0% {
+          translate: 38rem 0;
+          letter-spacing: 1ch;
+        }
+
+        30% {
+          letter-spacing: 0.5ch;
+        }
+
+        100% {
+          translate: 0 0;
+          letter-spacing: normal;
+        }
+      }
+
+      @keyframes linkfade {
+        from {
+          translate: 1ch 0;
+          filter: opacity(0);
+        }
+
+        to {
+          translate: 0 0;
+          filter: none;
         }
       }
     </style>
