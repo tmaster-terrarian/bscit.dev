@@ -6,16 +6,16 @@ const _html =
   <div class="codesnippet">
     <h4><a class="hida" href="https://neocities.org/site/bscit" target="_blank">root</a>/</h4>
     <ul>
-      <li><a class="hida" href="/">bscit.dev</a>/</li>
+      <li><a class="hida" href="/old-home">bscit.dev</a>/</li>
       <ul>
         <li>main pages</li>
         <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="/works/">works</a></li>
+          <li><a href="/old-home">home</a></li>
+          <li><a href="/works/old">works</a></li>
         </ul>
         <li>misc</li>
         <ul>
-          <li><a href="/tools/">tools</a></li>
+          <li><a href="/tools/old">tools</a></li>
           <li><a href="/snippets.html">snippets</a></li>
         </ul>
       </ul>
