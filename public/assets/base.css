@@ -335,6 +335,10 @@ main {
         display: initial;
     }
 
+    footer:not(.ignore) {
+        top: max(calc(100% + 2rem), 100vh);
+    }
+
     main .sidebar details nav.navlink-container {
         margin-top: 1em;
     }
