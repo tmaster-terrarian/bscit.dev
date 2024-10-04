@@ -343,6 +343,8 @@ main {
         grid-template-areas: "before content after";
         grid-template-columns: [before] 1fr [content] 38rem [after] 1fr;
 
+        margin-block-end: 2rem;
+
         .sidebar {
             /*height: calc(100vh - 1rem);
             overflow-y: scroll;
