@@ -71,7 +71,7 @@ footer:not(.ignore) {
     padding: 20px 1rem;
     width: 100%;
 
-    border-top: 1px solid #383838;
+    border-top: 1px solid #fe3e4b80;
 
     position: absolute;
     top: max(100%, 100vh);
@@ -336,7 +336,7 @@ main {
     }
 
     footer:not(.ignore) {
-        top: max(calc(100% + 2rem), 100vh);
+        top: max(calc(100% + 1rem), 100vh);
     }
 
     main .sidebar details nav.navlink-container {
