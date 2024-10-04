@@ -1,6 +1,6 @@
 const menu = document.getElementById("menutd");
 const _html =
-`
+/*html*/`
 <!--navigator-->
 <div id="navigator" class="box notextmargin" style="padding: 5px">
   <div class="codesnippet">
