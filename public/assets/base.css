@@ -99,6 +99,7 @@ main {
 
     justify-content: center;
     margin-inline: auto;
+    margin-block-start: 1em;
     max-width: var(--bscit-main-width);
     padding-inline: 1rem;
     width: 100%;
