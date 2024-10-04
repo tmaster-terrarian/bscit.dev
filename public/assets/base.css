@@ -76,9 +76,11 @@ footer:not(.ignore) {
     position: absolute;
     top: max(100%, 100vh);
 
+    background-color: #FE3C4940;
+
     >div:first-of-type {
         position: relative;
-        width: min(100%, 38rem);
+        width: min(100%, var(--bscit-main-width));
         left: 50%;
         transform: translate(-50%, 0);
     }
@@ -138,6 +140,7 @@ main {
                             height: 1em;
                             position: relative;
                             top: 3px;
+                            user-select: none;
                         }
                     }
                 }
