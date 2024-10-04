@@ -3,21 +3,122 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=/home" />
+    <!-- <meta http-equiv="refresh" content="0; url=/home" /> -->
     <title>bscit.dev</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
     <link rel="me" href="https://mastodon.art/@bscit">
     <link href="/assets/base.css" rel="stylesheet" type="text/css" media="all">
-    <script src="/templates/templates.js"></script>
-    <script src="/templates/header.js" type="module"></script>
-    <script src="/templates/sidebar-v2.js" type="module"></script>
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+        height: 100vh;
+
+        background: black;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        user-select: none;
+
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        animation-name: fadein;
+        animation-duration: 1.5s;
+        animation-fill-mode: backwards;
+
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      main {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1em;
+        text-align: center;
+      }
+
+      .path {
+        color: rgb(99, 99, 99);
+      }
+
+      main div {
+        margin: 1em;
+        overflow-x: hidden;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-block: 0;
+      }
+
+      h2 {
+        margin-block: 0;
+        padding: 0.5em 0;
+      }
+
+      h2 span {
+        margin-left: -3ch;
+        transition: margin-left 0.5s;
+      }
+
+      h2:hover span {
+        margin-left: 0;
+      }
+
+      main a {
+        color: rgba(160, 160, 160, 0.67);
+      }
+      h2 span:hover a:not(.d) {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      main a.d, .d {
+        text-decoration: none;
+        color: rgb(108, 108, 108);
+      }
+
+      .c {
+        cursor: default;
+      }
+
+      @keyframes fadein {
+        from {
+          filter: blur(15px);
+          translate: -5% 0;
+        }
+
+        to {
+          filter: none;
+          translate: 0 0;
+        }
+      }
+    </style>
   </head>
   <body>
+    <img src="/images/cover-10-24-notext.png">
     <main>
       <div class="content">
-        
+        <h1><i>bscit<span class="path">.dev</span></i></h1>
+        <h2><span><a href="/home" class="d">&gt;&gt;&nbsp;<a href="/home" class="no-underline">enter</a></a></span></h2>
       </div>
     </main>
+    <footer>
+        <h5 class="d c"><a href="https://github.com/tmaster-terrarian/bscit.dev" class="no-underline" target="_blank">source</a> | <a href="https://neocities.org/site/bscit" class="no-underline" target="_blank">profile</a></h5>
+    </footer>
   </body>
 </html>
