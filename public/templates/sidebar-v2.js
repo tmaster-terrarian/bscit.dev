@@ -1,4 +1,4 @@
-import * as gen from "/js/site-tree-gen.js";
+import * as gen from "../js/site-tree-gen.js";
 
 Templates.load("sidebar-v2").then((text) => {
     let e = Array.from(document.getElementsByTagName("main"))[0];

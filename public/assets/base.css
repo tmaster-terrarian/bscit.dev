@@ -52,7 +52,7 @@ hr {
     background: #383838;
 }
 
-header:not(.ignore) {
+header {
     padding: 20px calc(1em + 1rem);
 
     border-bottom: 1px solid #383838;
@@ -81,10 +81,6 @@ footer:not(.ignore) {
         width: min(100%, 38rem);
         left: 50%;
         transform: translate(-50%, 0);
-    }
-
-    a {
-        text-decoration: none;
     }
 }
 

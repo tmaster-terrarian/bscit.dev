@@ -101,7 +101,7 @@ export const generate = function(fileList)
                         <summary><img src="/images/heroicons-chevron-right.svg" class="path path-icon ellipsis"><img src="/images/heroicons-chevron-down.svg" class="path path-icon arrow"><a class="no-underline" href="https://neocities.org/site/bscit" target="_blank"><b>root</b><span class="path">/</span></a><span class="ellipsis path">...</span></summary>
                         <ul>
                             <details open>
-                                <summary><img src="/images/heroicons-chevron-right.svg" class="path path-icon ellipsis"><img src="/images/heroicons-chevron-down.svg" class="path path-icon arrow"><a class="no-underline" href="https://bscit.dev/home/"><b>bscit.dev</b><span class="path">/</span></a><span class="ellipsis path">...</span></summary>
+                                <summary><img src="/images/heroicons-chevron-right.svg" class="path path-icon ellipsis"><img src="/images/heroicons-chevron-down.svg" class="path path-icon arrow"><a class="no-underline" href="/"><b>bscit.dev</b><span class="path">/</span></a><span class="ellipsis path">...</span></summary>
                                 <ul>
                                     ${construct(parse(fileList, "/"))}
                                 </ul>
