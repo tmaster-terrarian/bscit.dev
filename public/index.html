@@ -35,7 +35,7 @@
         top: 50%;
         transform: translate(0, -50%);
 
-        animation-name: fadein;
+        animation-name: imagefade;
         animation-duration: 1s;
         animation-fill-mode: backwards;
 
@@ -81,7 +81,8 @@
         width: min-content;
         padding-right: 0.5ch;
         border-radius: 0.5ch;
-        background-color: #1d1d1db0;
+        background-color: #1d1d1dc7;
+        backdrop-filter: blur(12px);
       }
 
       h2 {
@@ -97,10 +98,33 @@
       h2 span {
         margin-left: -3ch;
         transition: margin-left 0.5s;
+
+        padding-right: 0.5ch;
+        border-radius: 0.5ch;
+        background-color: #1d1d1dc7;
+        backdrop-filter: blur(12px);
       }
 
       h2:hover span {
         margin-left: 0;
+      }
+
+      h5 {
+        width: fit-content;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        background: #1d1d1dc7;
+        backdrop-filter: blur(12px);
+        border-radius: 0.75ch;
+
+        padding: 1px 4px;
+
+        animation-duration: 0.4s;
+        animation-name: fadein;
+        animation-fill-mode: backwards;
+        animation-delay: 0;
       }
 
       main a {
@@ -120,7 +144,7 @@
         cursor: default;
       }
 
-      @keyframes fadein {
+      @keyframes imagefade {
         from {
           filter: blur(10px);
           translate: -5% 2.5%;
@@ -134,19 +158,15 @@
         }
       }
 
-      @keyframes slidein {
-        0% {
-          translate: 38rem 0;
-          letter-spacing: 1ch;
+      @keyframes fadein {
+        from {
+          translate: 0 1ch;
+          filter: opacity(0);
         }
 
-        30% {
-          letter-spacing: 0.5ch;
-        }
-
-        100% {
+        to {
           translate: 0 0;
-          letter-spacing: normal;
+          filter: none;
         }
       }
 
@@ -168,7 +188,7 @@
         }
         img {
           width: 230%;
-          right: -10%;
+          right: -16%;
         }
       }
 
@@ -179,6 +199,12 @@
         img {
           width: 220%;
           right: -20%;
+        }
+      }
+
+      @media (min-width: 801px) {
+        h1, h5 {
+          background: none;
         }
       }
     </style>
