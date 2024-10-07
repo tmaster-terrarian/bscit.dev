@@ -47,6 +47,7 @@
         bottom: 50%;
         left: 50%;
         transform: translate(-50%, 50%);
+        margin-block-start: 0;
       }
 
       footer {
@@ -207,6 +208,14 @@
           background: none;
         }
       }
+
+      @media (min-width: 991px) {
+        main {
+          grid-template-areas: "before content after";
+          grid-template-columns: [before] 1fr [content] 38rem [after] 1fr;
+          margin-block-start: 2rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -214,7 +223,7 @@
     <main>
       <div class="content">
         <h1><i>bscit<span class="path">.dev</span></i></h1>
-        <h2><span><a href="/home" class="d">&gt;&gt;&nbsp;<a href="/home" class="no-underline">enter</a></a></span></h2>
+        <h2><span><a href="/home/" class="d">&gt;&gt;&nbsp;<a href="/home/" class="no-underline">enter</a></a></span></h2>
       </div>
     </main>
     <footer class="ignore">
