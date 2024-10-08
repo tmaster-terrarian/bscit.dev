@@ -2,9 +2,13 @@ name: Deploy to neocities
 
 # only run on changes to main. Use main or master depending on whatever your default branch is called.
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency: # prevent concurrent deploys doing strange things
   group: deploy-to-neocities
@@ -15,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Set up any tools and build steps here
     # This example uses a Node.js toolchain to build a site
     # - name: Use Node.js
@@ -26,10 +30,22 @@ jobs:
     #   run: |
     #     npm i
     #     npm run build
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+      with:
+        ruby-version: '3.1' # Not needed with a .ruby-version file
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+        cache-version: 0 # Increment this number if you need to re-download cached gems
+  
+    # Outputs to the './_site' directory by default
+    - name: Build with Jekyll
+      run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+
     # When the dist_dir is ready, deploy it to neocities
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: false
-        dist_dir: public
+        dist_dir: _site
