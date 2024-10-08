@@ -40,7 +40,7 @@ jobs:
 
     # Outputs to the './_site' directory by default
     - name: Build with Jekyll
-      run: bundle exec jekyll build --baseurl "./public"
+      run: bundle exec jekyll build
 
     # When the dist_dir is ready, deploy it to neocities
     - name: Deploy to neocities

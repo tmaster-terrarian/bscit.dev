@@ -1,0 +1,19 @@
+source: ./src
+destination: ./public
+exclude:
+  .git/
+  .github/
+  .vscode/
+  .sass-cache/
+  .jekyll-cache/
+  gemfiles/
+  Gemfile
+  Gemfile.lock
+  node_modules/
+  vendor/bundle/
+  vendor/cache/
+  vendor/gems/
+  vendor/ruby/
+
+keep_files:
+  webdav.json
