@@ -8,6 +8,8 @@ html {
 
     --bscit-main-width: 1360px;
 
+    --bscit-main-content-width: 38rem;
+
     background-color: var(--bscit-main-backgroundColor);
 }
 
@@ -52,6 +54,12 @@ a:visited, a {
 a:hover {
     color: inherit;
     text-decoration: underline;
+}
+
+img.emoji {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
 }
 
 hr {
@@ -103,7 +111,7 @@ main {
         "content"
         "after";
 
-    grid-template-columns: min(100%, 38rem);
+    grid-template-columns: min(100%, var(--bscit-main-content-width));
 
     justify-content: center;
     margin-inline: auto;
@@ -162,6 +170,10 @@ main {
 
         ul, ol {
             line-height: 22px;
+        }
+
+        img {
+            max-width: var(--bscit-main-content-width);
         }
     }
 }
@@ -264,7 +276,7 @@ main {
 
 .site-tree {
     overflow-x: scroll;
-    max-width: calc((100vw - 38rem - 6rem) / 2);
+    max-width: calc((100vw - var(--bscit-main-content-width) - 6rem) / 2);
 
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
@@ -289,6 +301,48 @@ main {
 .sidebar .site-tree details>summary
 {
     cursor: pointer;
+}
+
+blockquote {
+    background-color: #1f1f1f;
+    background-blend-mode: lighten;
+    border-left: 4px #383838 solid;
+    margin-inline-start: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: calc(20px - 4px);
+}
+
+blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockquote.prompt-danger {
+    display: list-item;
+    list-style-position: inside;
+    list-style-type: circle;
+
+    ::marker {
+        width: 1em;
+        height: 1em;
+        margin-top: 0.5em;
+    }
+}
+
+blockquote.prompt-tip {
+    list-style-image: url("/images/heroicons-tip.svg");
+    border-color: var(--bscit-main-foregroundColor-lighter);
+}
+blockquote.prompt-info {
+    list-style-image: url("/images/heroicons-info.svg");
+    border-color: rgb(43, 76, 226);
+    background-color: rgba(43, 76, 226, 0.05);
+}
+blockquote.prompt-warning {
+    list-style-image: url("/images/heroicons-warning.svg");
+    border-color: orange;
+    background-color: rgba(255, 166, 0, 0.05);
+}
+blockquote.prompt-danger {
+    list-style-image: url("/images/heroicons-error.svg");
+    border-color: crimson;
+    background-color: rgba(220, 20, 60, 0.05);
 }
 
 .capital {
@@ -357,7 +411,7 @@ main {
 
     main {
         grid-template-areas: "before content after";
-        grid-template-columns: [before] 1fr [content] 38rem [after] 1fr;
+        grid-template-columns: [before] 1fr [content] var(--bscit-main-content-width) [after] 1fr;
 
         margin-block-end: 2rem;
 

@@ -29,6 +29,51 @@ social:
 
 # ↑ --------------------------
 
+# jekyll-spaceship settings › https://github.com/jeffreytse/jekyll-spaceship/blob/master/README.md
+# ↓ --------------------------
+# Where things are
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - mathjax-processor
+    - mermaid-processor
+    - polyfill-processor
+    - emoji-processor
+  mathjax-processor:
+    src:
+      - https://polyfill.io/v3/polyfill.min.js?features=es6
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    config:
+      tex:
+        inlineMath:
+          - ['$','$']
+          - ['\(','\)']
+        displayMath:
+          - ['$$','$$']
+          - ['\[','\]']
+      svg:
+        fontCache: 'global'
+    optimize: # optimization on building stage to check and add mathjax scripts
+      enabled: true # value `false` for adding to all pages
+      include: []   # include patterns for math expressions checking (regexp)
+      exclude: []   # exclude patterns for math expressions checking (regexp)
+  mermaid-processor:
+    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    css:
+      class: mermaid
+    syntax:
+      code: 'mermaid!'
+      custom: ['@startmermaid', '@endmermaid']
+    config:
+      theme: default
+    src: https://mermaid.ink/svg/
+  emoji-processor:
+    css:
+      class: emoji
+    src: https://github.githubassets.com/images/icons/emoji/
+
+# ↑ --------------------------
+
 defaults:
   - scope:
       path: ""
