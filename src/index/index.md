@@ -7,7 +7,7 @@ title: Index
 - [Home](/home/)
 - [Home (Old)](/old-home)
 - [Index](/index/)
-- [Not Found](/not-found)
+- [Not Found](/not_found.html)
 - [Snippets (Old)](/snippets)
 - [Tools](/tools/)
 - [Tools (Old)](/tools/old)

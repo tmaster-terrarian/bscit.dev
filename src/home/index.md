@@ -37,6 +37,21 @@ meta:
                 margin-top: 1em;
                 margin-left: 1em;
             }
+            iframe:not(.navlink-ads), img.imgg {
+                display: inline-block;
+                width: min(88px, calc(50% - 4.5px));
+                height: auto;
+                aspect-ratio: 88/31;
+            }
+            div {
+                a {
+                    display: block !important;
+                    width: min(200px, 100%);
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
     </style>'
 
@@ -44,23 +59,24 @@ after:
   - '<details class="buttons mobile-hidden" open>
         <summary>Button Zone</summary>
         <section>
-            <iframe style="border:2px outset white; border-color: white black black white; background-color:#ccc; width: 100%; aspect-ratio: 1;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
-            <a href="https://dimden.dev/" target="_blank"><img src="https://dimden.dev/images/88x31.gif"></a>
-            <a href="https://boxy.neocities.org/" target="_blank"><picture><source srcset="https://boxy.neocities.org/images/ggWebp.webp" type="image/webp"><img src="https://boxy.neocities.org/images/ggPng.png"></picture></a>
-            <a href="https://cyber.dabamos.de/88x31" target="_blank"><img src="https://maia.crimew.gay/badges/88x31.gif"></a>
-            <a href="https://discord.com" target="_blank"><img src="/images/88x31gifs/discord_now.gif"></a>
-            <img src="/images/88x31gifs/anydamnbrowser.gif">
-            <img src="/images/88x31gifs/all-rights-reserved.png">
-            <iframe src="https://michealtheratz.neocities.org/button" width="88" height="32" style="border: none;"></iframe>
-            <a href="https://mikeythemike.neocities.org/" target="_blank" title="MIKE"><img src="/images/88x31gifs/MIKE-button.png"></a>
-            <a href="https://s1nez.nekoweb.org/"><img src="https://s1nez.nekoweb.org/BUTTON.gif"></a>
-            <a href="https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life" target="_blank"><img src="/images/88x31gifs/adobe_getflash4.gif"></a>
-            <!--<img src="/images/88x31gifs/bestviewedwithacomputer.gif">-->
-            <a href="https://uncannyvalley.neocities.org/" target="_blank"><img src="https://uncannyvalley.neocities.org/uncanny.gif"></a>
-            <a href="https://melps.neocities.org" target="_blank"><img src="https://melps.neocities.org/limk1.jpg" width="88px"></a>
-            <a href="https://mookalh.com/" target="_blank"><img src="/images/88x31gifs/mookal-button.gif"></a>
-            <a href="https://benboquest.neocities.org/" target="_blank" title="SUPER BENBO QUEST II WEBPAGED CONTRABAND EDITION"><img src="/images/88x31gifs/BENBOWARS button.gif"></a>
-            <a href="https://roachette.neocities.org" target="_blank" title="Roachette"><img src="/images/88x31gifs/rchettebutton.gif"></a>
+            <iframe style="border:2px outset white; border-color: white black black white; background-color:#ccc; width: 100%; aspect-ratio: 1;" class="navlink-ads" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
+            <a href="https://dimden.dev/" target="_blank"><img img class="imgg" src="https://dimden.dev/images/88x31.gif"></a>
+            <a href="https://boxy.neocities.org/" target="_blank"><picture><source srcset="https://boxy.neocities.org/images/ggWebp.webp" type="image/webp"><img img class="imgg" src="https://boxy.neocities.org/images/ggPng.png"></picture></a>
+            <a href="https://cyber.dabamos.de/88x31" target="_blank"><img img class="imgg" src="https://maia.crimew.gay/badges/88x31.gif"></a>
+            <a href="https://discord.com" target="_blank"><img img class="imgg" src="/images/88x31gifs/discord_now.gif"></a>
+            <img img class="imgg" src="/images/88x31gifs/anydamnbrowser.gif">
+            <img img class="imgg" src="/images/88x31gifs/all-rights-reserved.png">
+            <!--<iframe src="https://michealtheratz.neocities.org/button" width="88" height="32" style="border: none;"></iframe>-->
+            <a href="https://michealtheratz.neocities.org/" target="_blank"><img img class="imgg" src="/images/88x31gifs/michaeltheratz-sorry.png"></a>
+            <a href="https://mikeythemike.neocities.org/" target="_blank" title="MIKE"><img img class="imgg" src="/images/88x31gifs/MIKE-button.png"></a>
+            <a href="https://s1nez.nekoweb.org/"><img img class="imgg" src="https://s1nez.nekoweb.org/BUTTON.gif"></a>
+            <a href="https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life" target="_blank"><img img class="imgg" src="/images/88x31gifs/adobe_getflash4.gif"></a>
+            <!--<img img class="imgg" src="/images/88x31gifs/bestviewedwithacomputer.gif">-->
+            <a href="https://uncannyvalley.neocities.org/" target="_blank"><img img class="imgg" src="https://uncannyvalley.neocities.org/uncanny.gif"></a>
+            <a href="https://melps.neocities.org" target="_blank"><img img class="imgg" src="https://melps.neocities.org/limk1.jpg" width="88px"></a>
+            <a href="https://mookalh.com/" target="_blank"><img img class="imgg" src="/images/88x31gifs/mookal-button.gif"></a>
+            <a href="https://benboquest.neocities.org/" target="_blank" title="SUPER BENBO QUEST II WEBPAGED"><img img class="imgg" src="/images/88x31gifs/BENBOWARS button.gif"></a>
+            <a href="https://roachette.neocities.org" target="_blank" title="Roachette"><img img class="imgg" src="/images/88x31gifs/rchettebutton.gif"></a>
             <iframe src="//incr.easrng.net/badge?key=bscit" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
             <script src="https://transring.neocities.org/ring.js"></script>
         </section>
