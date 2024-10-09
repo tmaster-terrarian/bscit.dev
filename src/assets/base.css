@@ -60,6 +60,7 @@ img.emoji {
     width: 1em;
     height: 1em;
     display: inline-block;
+    vertical-align: middle;
 }
 
 hr {
@@ -314,35 +315,49 @@ blockquote {
 }
 
 blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockquote.prompt-danger {
-    display: list-item;
-    list-style-position: inside;
-    list-style-type: circle;
-}
+    --img: url("/images/heroicons-tip.svg");
+    --color: var(--bscit-main-foregroundColor-lighter);
 
-blockquote.prompt-tip::marker, blockquote.prompt-info::marker, blockquote.prompt-warning::marker, blockquote.prompt-danger::marker {
-    width: 1em;
-    height: 1em;
-    margin-top: 0.5em;
+    border-color: var(--color);
+
+    >:first-child {
+        position: relative;
+        left: 2em;
+        font-style: italic;
+    }
+    >:first-child::before {
+        position: absolute;
+        content: var(--img);
+        width: 20px;
+        left: -2em;
+        display: block;
+        top: -2px
+    }
+    >:first-child::first-line {
+        color: var(--color);
+        font-weight: 600;
+        font-style: initial;
+    }
 }
 
 blockquote.prompt-tip {
-    list-style-image: url("/images/heroicons-tip.svg");
-    border-color: var(--bscit-main-foregroundColor-lighter);
+    --img: url("/images/heroicons-tip.svg");
+    --color: var(--bscit-main-foregroundColor-lighter);
 }
 blockquote.prompt-info {
-    list-style-image: url("/images/heroicons-info.svg");
-    border-color: rgb(43, 76, 226);
-    background-color: rgba(43, 76, 226, 0.05);
+    --img: url("/images/heroicons-info.svg");
+    --color: rgb(43, 76, 226);
+    background-color: rgb(from var(--color) r g b / 0.05);
 }
 blockquote.prompt-warning {
-    list-style-image: url("/images/heroicons-warning.svg");
-    border-color: orange;
-    background-color: rgba(255, 166, 0, 0.05);
+    --img: url("/images/heroicons-warning.svg");
+    --color: orange;
+    background-color: rgb(from var(--color) r g b / 0.05);
 }
 blockquote.prompt-danger {
-    list-style-image: url("/images/heroicons-error.svg");
-    border-color: crimson;
-    background-color: rgba(220, 20, 60, 0.05);
+    --img: url("/images/heroicons-error.svg");
+    --color: rgb(240, 20, 64);
+    background-color: rgb(from var(--color) r g b / 0.05);
 }
 
 .capital {
