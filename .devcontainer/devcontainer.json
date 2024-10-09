@@ -1,0 +1,24 @@
+{
+    "name": "Jekyll",
+    "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
+    "onCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            },
+            "extensions": [
+                // Liquid
+                "sissel.shopify-liquid",
+                // Shell
+                "timonwong.shellcheck",
+                "mkhl.shfmt",
+                // Common formatter
+                "EditorConfig.EditorConfig",
+
+                "throvn.js-html-template-strings"
+            ]
+        }
+    }
+}
