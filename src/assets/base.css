@@ -317,12 +317,12 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
     display: list-item;
     list-style-position: inside;
     list-style-type: circle;
+}
 
-    ::marker {
-        width: 1em;
-        height: 1em;
-        margin-top: 0.5em;
-    }
+blockquote.prompt-tip::marker, blockquote.prompt-info::marker, blockquote.prompt-warning::marker, blockquote.prompt-danger::marker {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.5em;
 }
 
 blockquote.prompt-tip {
