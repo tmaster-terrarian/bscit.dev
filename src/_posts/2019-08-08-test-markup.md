@@ -7,7 +7,7 @@ categories: [Blogging, Demo]
 tags: [typography]
 pin: true
 math: true
-mermaid: true
+emoji: true
 ---
 
 ## Headings
@@ -16,6 +16,7 @@ mermaid: true
 <!-- markdownlint-disable -->
 # H1 — heading
 {: .mt-4 .mb-0 }
+---
 
 ## H2 — heading
 {: data-toc-skip='' .mt-4 .mb-0 }
@@ -95,7 +96,7 @@ Moon
 
 ## Footnote
 
-Click the hook will locate the footnote[^footnote], and here is another footnote[^fn-nth-2].
+Click the hook will locate the footnote[^fn-1], and here is another footnote[^fn-2].
 
 ## Inline code
 
@@ -152,45 +153,28 @@ When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
-## Mermaid SVG
-
-```mermaid
- gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-```
-
 ## Images
 
 ### Default (with caption)
 
-![Desktop View](/images/cover-10-24.png){: width="972" height="589" }
+![Desktop View](/images/cover-10-24.png){: width="100%" }
 _Full screen width and center alignment_
 
 ### Left aligned
 
-![Desktop View](/images/cover-10-24.png){: width="972" height="589" .w-75 .normal}
+![Desktop View](/images/cover-10-24.png){: width="75%" .w-75}
 
 ### Float to left
 
-![Desktop View](/images/cover-10-24.png){: width="972" height="589" .w-50 .left}
+![Desktop View](/images/cover-10-24.png){: width="50%" .w-50 .left}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ### Float to right
 
-![Desktop View](/images/cover-10-24.png){: width="972" height="589" .w-50 .right}
+![Desktop View](/images/cover-10-24.png){: width="50%" .w-50 .right}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
-
-### Dark/Light mode & Shadow
-
-The image below will toggle dark/light mode based on theme preference, notice it has shadows.
-
-![light mode only](/images/cover-10-24.png){: .light .w-75 .shadow .rounded-10 w='1212' h='668' }
-![dark mode only](/images/cover-10-24-notext.png){: .dark .w-75 .shadow .rounded-10 w='1212' h='668' }
 
 ## Reverse Footnote
 
-[^footnote]: The footnote source
-[^fn-nth-2]: The 2nd footnote source
+[^fn-1]: The footnote source
+[^fn-2]: The 2nd footnote source

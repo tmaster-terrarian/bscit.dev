@@ -11,6 +11,8 @@ html {
     --bscit-main-content-width: 38rem;
 
     background-color: var(--bscit-main-backgroundColor);
+
+    color-scheme: dark;
 }
 
 body {
@@ -175,6 +177,26 @@ main {
 
         img {
             max-width: var(--bscit-main-content-width);
+            height: auto;
+        }
+
+        .w-75 {
+            width: 75%;
+        }
+        .w-50 {
+            width: 50%;
+        }
+        .w-25 {
+            width: 25%;
+        }
+
+        img.left {
+            float: left;
+            margin-inline-end: 1ch;
+        }
+        img.right {
+            float: right;
+            margin-inline-start: 1ch;
         }
     }
 }
@@ -308,7 +330,7 @@ blockquote {
     background-color: #1f1f1f;
     background-blend-mode: lighten;
     border-left: 4px #383838 solid;
-    margin-inline-start: 20px;
+    margin-inline: 20px;
     padding-top: 1px;
     padding-bottom: 1px;
     padding-left: calc(20px - 4px);
@@ -320,16 +342,18 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
 
     border-color: var(--color);
 
+    border-radius: 4px;
+
     >:first-child {
         position: relative;
-        left: 2em;
+        left: 3ch;
         font-style: italic;
     }
     >:first-child::before {
         position: absolute;
         content: var(--img);
         width: 20px;
-        left: -2em;
+        left: calc(-3ch - 2px);
         display: block;
         top: -2px
     }
@@ -343,21 +367,59 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
 blockquote.prompt-tip {
     --img: url("/images/heroicons-tip.svg");
     --color: var(--bscit-main-foregroundColor-lighter);
+    background-color: rgb(from var(--color) r g b / 0.04);
 }
 blockquote.prompt-info {
     --img: url("/images/heroicons-info.svg");
     --color: rgb(43, 76, 226);
-    background-color: rgb(from var(--color) r g b / 0.05);
+    background-color: rgb(from var(--color) r g b / 0.07);
 }
 blockquote.prompt-warning {
     --img: url("/images/heroicons-warning.svg");
     --color: orange;
-    background-color: rgb(from var(--color) r g b / 0.05);
+    background-color: rgb(from var(--color) r g b / 0.04);
 }
 blockquote.prompt-danger {
     --img: url("/images/heroicons-error.svg");
     --color: rgb(240, 20, 64);
-    background-color: rgb(from var(--color) r g b / 0.05);
+    background-color: rgb(from var(--color) r g b / 0.08);
+}
+
+table {
+    background-color: #1f1f1f;
+    margin-block: 1em;
+    margin-inline: 1em;
+    border-spacing: 5px;
+    width: calc(100% - 2em);
+    table-layout:auto;
+}
+
+thead {
+    background-color: #38383880;
+}
+
+td, th {
+    padding: 4px;
+}
+
+p code {
+    background-color: #1f1f1f;
+    border-radius: 4px;
+    color: var(--bscit-main-foregroundColor-lighter);
+}
+
+pre {
+    background-color: #1f1f1f;
+    border: 1px #383838 solid;
+    border-radius: 0.5em;
+    padding: 0.5em;
+
+    overflow-x: scroll;
+    scrollbar-gutter: 1em;
+}
+
+.footnote {
+    margin-left: 1px;
 }
 
 .capital {

@@ -36,7 +36,6 @@ jekyll-spaceship:
   # default enabled processors
   processors:
     - mathjax-processor
-    - mermaid-processor
     - polyfill-processor
     - emoji-processor
   mathjax-processor:
@@ -57,16 +56,6 @@ jekyll-spaceship:
       enabled: true # value `false` for adding to all pages
       include: []   # include patterns for math expressions checking (regexp)
       exclude: []   # exclude patterns for math expressions checking (regexp)
-  mermaid-processor:
-    mode: default  # mode value 'pre-fetch' for fetching image at building stage
-    css:
-      class: mermaid
-    syntax:
-      code: 'mermaid!'
-      custom: ['@startmermaid', '@endmermaid']
-    config:
-      theme: default
-    src: https://mermaid.ink/svg/
   emoji-processor:
     css:
       class: emoji
