@@ -3,7 +3,5 @@
     "[liquid]": {
         "editor.formatOnSave": false
     },
-    "github-actions.workflows.pinned.workflows": [
-        ".github/workflows/deploy-to-neocities.yml"
-    ]
+    "github-actions.workflows.pinned.workflows": []
 }

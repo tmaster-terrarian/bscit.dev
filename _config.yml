@@ -37,9 +37,9 @@ defaults:
       author: bscit
       layout: default
   - scope:
-      path: "/posts"
+      path: "/_posts"
     values:
-      permalink: /posts/posts/:year/:month/:day/:title:output_ext
+      permalink: /posts/:year/:month/:day/:title:output_ext
 
 baseurl: ""
 
