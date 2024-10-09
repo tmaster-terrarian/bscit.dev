@@ -1,16 +1,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta name="theme-color" content="#FE3C49" />
 
     {% include font-stylesheets.html %}
 
     <link href="{{ '/assets/base.css' | relative_url }}" rel="stylesheet" type="text/css" media="all">
-
     <title>{{ page.title | downcase | append: ' - ' }}{{ site.title }}</title>
 
     {% seo title=false %}
+
+    <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | relative_url }}">
 
     <script type="module">
         import * as gen from "{{ '/js/site-tree-gen.js' | relative_url }}";
