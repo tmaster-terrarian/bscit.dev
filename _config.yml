@@ -39,7 +39,7 @@ defaults:
   - scope:
       path: "/posts"
     values:
-      permalink: /posts/:categories/:year/:month/:day/:title:output_ext
+      permalink: /posts/posts/:year/:month/:day/:title:output_ext
 
 baseurl: ""
 
