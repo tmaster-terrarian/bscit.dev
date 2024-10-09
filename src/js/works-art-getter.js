@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => setTimeout(() => {
   feed = document.getElementById("tumblrfeed");
   pageNumElement = document.getElementById("pageNum");
   loadall();
-}, 250));
+}, 100));
 
 let Data = null;
 

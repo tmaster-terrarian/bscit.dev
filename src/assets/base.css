@@ -33,6 +33,14 @@ body {
     box-sizing: border-box;
 }
 
+details>summary {
+    cursor: default;
+}
+
+details>summary::marker {
+    user-select: none;
+}
+
 a:visited, a {
     color: inherit;
 }
@@ -151,6 +159,10 @@ main {
 
     .content {
         grid-area: content;
+
+        ul, ol {
+            line-height: 22px;
+        }
     }
 }
 

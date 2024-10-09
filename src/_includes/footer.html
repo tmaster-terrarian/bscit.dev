@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<footer>
+    <div>
+        <h5 style="text-align: left; float: left; cursor: default;">
+            {%- assign last_item = site.footer_data.links | last -%}
+            {% for item in site.footer_data.links %}
+                <a class="no-underline" href="{{ item.url | relative_url }}">{{ item.name }}</a>
+                {% unless item == last_item %} | {% endunless %}
+            {% endfor %}
+        </h5>
+        <h5 style="text-align: right; float: right; cursor: default;">
+            <a class="no-underline" href="https://github.com/tmaster-terrarian/bscit.dev">source</a>
+            |
+            <a class="no-underline" href="https://neocities.org/site/bscit">profile</a>
+            |
+            <a class="no-underline" href="{{ '/' | relative_url }}">do that again</a>
+        </h5>
+    </div>
+</footer>

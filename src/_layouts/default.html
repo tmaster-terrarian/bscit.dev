@@ -1,31 +1,26 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html>
 
 {% include head.html %}
 
 <body>
+    {%  include header.html %}
+
     <main>
-        <header>
-            <h1><a href="/home">bscit.dev</a></h1>
-        </header>
+        {% include sidebar.html %}
+
         <div class="content">
-            <h2>Index</h2>
-            <ul style="line-height: 22px">
-                <li><a href="/works">Creative Works</a></li>
-                <li><a href="/works/old">Creative Works (Old)</a></li>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/old-home">Home (Old)</a></li>
-                <li><a href="/index/">Index</a></li>
-                <li><a href="/not_found">Not Found</a></li>
-                <li><a href="/snippets">Snippets (Old)</a></li>
-                <li><a href="/tools">Tools (Old)</a></li>
-            </ul>
+            {% unless page.no-h2 %}
+                <h2>{{ page.title }}</h2>
+            {% endunless %}
+            {{ content }}
         </div>
+
+        {{ page.after }}
     </main>
+    {{ page.post-main }}
+
+    {% include footer.html %}
 </body>
 
 </html>

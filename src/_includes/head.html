@@ -2,17 +2,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
-    <link href="/assets/base.css" rel="stylesheet" type="text/css" media="all">
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://bscit.dev/images/thumb.png" />
-    <meta property="og:description" content="Personal website related to any and all things bscit" />
     <meta name="theme-color" content="#FE3C49" />
-    <meta name="twitter:card" content="summary_large_image">
 
-    <title>
-        {{ page.title | append: ' - ' }}
-        {{ site.title }}
-    </title>
+    {% include font-stylesheets.html %}
 
+    <link href="{{ '/assets/base.css' | relative_url }}" rel="stylesheet" type="text/css" media="all">
+
+    <title>{{ page.title | downcase | append: ' - ' }}{{ site.title }}</title>
+
+    {% seo title=false %}
+
+    <script type="module">
+        import * as gen from "{{ '/js/site-tree-gen.js' | relative_url }}";
+
+        window.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("site-tree-holder").innerHTML = gen.generate([
+                // gen.directory("ignorethis/", [
+                //     gen.file("beebo-b665e3d/")
+                // ]),
+                gen.file("index/"),
+                gen.file("snippets.html"),
+                gen.file("tools/"),
+                gen.file("works/"),
+            ]);
+        })
+    </script>
+
+    {{ page.meta | join }}
 </head>

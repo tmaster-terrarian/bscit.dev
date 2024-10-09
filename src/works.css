@@ -21,6 +21,11 @@
   padding: 0 8px;
 }
 
+#tabholder
+{
+  background-color: #004731;
+}
+
 #tracks
 {
   display: flex;

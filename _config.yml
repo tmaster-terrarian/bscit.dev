@@ -1,19 +1,88 @@
+# metadata
+lang: en
+timezone: Asia/Shanghai
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: bscit.dev
+
+description: >- # used by seo meta and the atom feed
+  Personal website related to any and all things bscit
+
+url: "https://bscit.dev"
+
+github:
+  username: tmaster-terrarian
+
+twitter:
+  username: bscit_dev
+  card: summary_large_image
+
+social:
+  # Will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: bscit
+  # email: example@domain.com # change to your email address
+  links:
+    - https://github.com/tmaster-terrarian
+    - https://twitter.com/bscit_dev
+
+# ↑ --------------------------
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/thumb.png
+      author: bscit
+      layout: default
+  - scope:
+      path: "/posts"
+    values:
+      permalink: /posts/:categories/:year/:month/:day/:title:output_ext
+
+baseurl: ""
+
+footer_data:
+  links:
+    - url: https://github.com/tmaster-terrarian
+      name: github
+    - url: https://twitter.com/bscit_dev
+      name: twitter
+    - url: https://ko-fi.com/bscit
+      name: ko-fi
+    - url: https://tumblr.com/bscit
+      name: tumblr
+    - url: https://tmasterterrarian.itch.io
+      name: itch.io
+    - url: https://youtube.com/@bscitdev
+      name: youtube
+    - url: https://twitch.tv/bscit_dev
+      name: twitch
+    - url: https://soundcloud.com/bscit
+      name: soundcloud
+
+plugins:
+  - jekyll-seo-tag
+
+# file handling
 source: ./src
 destination: ./public
+
 exclude:
-  .git/
-  .github/
-  .vscode/
-  .sass-cache/
-  .jekyll-cache/
-  gemfiles/
-  Gemfile
-  Gemfile.lock
-  node_modules/
-  vendor/bundle/
-  vendor/cache/
-  vendor/gems/
-  vendor/ruby/
+- .git/
+- .github/
+- .vscode/
+- .sass-cache/
+- .jekyll-cache/
+- gemfiles/
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
 
 keep_files:
-  webdav.json
+- webdav.json
