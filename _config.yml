@@ -65,6 +65,7 @@ footer_data:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-spaceship
 
 # file handling
 source: ./src
