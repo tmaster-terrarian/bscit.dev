@@ -11,6 +11,7 @@
 .tab button {
   box-sizing: border-box;
   text-align: left;
+  color: black;
   background-color: #ccc;
   float: left;
   border: 2px outset white;

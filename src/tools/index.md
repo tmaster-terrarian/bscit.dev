@@ -1,6 +1,6 @@
 ---
 title: Tools
-meta: ['<link href="./style.css" rel="stylesheet" type="text/css" media="all">']
+meta: <link href="./style.css" rel="stylesheet" type="text/css" media="all">
 ---
 
 <section id="tools">

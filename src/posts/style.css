@@ -1,0 +1,31 @@
+nav.post-navigation {
+    flex-direction: column;
+
+    section:first-child {
+        margin-block-start: 0;
+    }
+    section:last-child {
+        margin-block-end: 0;
+    }
+
+    section {
+        background-color: #1f1f1f;
+        border: 1px #383838 solid;
+        border-radius: 0.5em;
+        padding: 0 1em;
+
+        width: 100%;
+
+        margin-block: 1em;
+
+        h3 {
+            width: fit-content;
+            display: inline-block;
+        }
+        span.date {
+            position: relative;
+            top: -1px;
+            cursor: default;
+        }
+    }
+}

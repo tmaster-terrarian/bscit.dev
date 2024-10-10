@@ -26,6 +26,8 @@ body {
     margin: 0 0 0.5rem;
 
     font-size: 15px;
+
+    overflow-x: hidden;
 }
 
 ::selection {
@@ -177,6 +179,9 @@ main {
 
         img {
             max-width: var(--bscit-main-content-width);
+        }
+
+        .h-auto {
             height: auto;
         }
 
@@ -326,7 +331,7 @@ main {
     cursor: pointer;
 }
 
-blockquote {
+blockquote.md, blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockquote.prompt-danger {
     background-color: #1f1f1f;
     background-blend-mode: lighten;
     border-left: 4px #383838 solid;
@@ -347,7 +352,6 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
     >:first-child {
         position: relative;
         left: 3ch;
-        font-style: italic;
     }
     >:first-child::before {
         position: absolute;
@@ -355,12 +359,12 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
         width: 20px;
         left: calc(-3ch - 2px);
         display: block;
-        top: -2px
+        top: 1px;
     }
     >:first-child::first-line {
         color: var(--color);
         font-weight: 600;
-        font-style: initial;
+        font-size: 1.15em;
     }
 }
 
@@ -371,7 +375,7 @@ blockquote.prompt-tip {
 }
 blockquote.prompt-info {
     --img: url("/images/heroicons-info.svg");
-    --color: rgb(43, 76, 226);
+    --color: rgb(63, 97, 250);
     background-color: rgb(from var(--color) r g b / 0.07);
 }
 blockquote.prompt-warning {
@@ -385,21 +389,21 @@ blockquote.prompt-danger {
     background-color: rgb(from var(--color) r g b / 0.08);
 }
 
-table {
+table.md {
     background-color: #1f1f1f;
     margin-block: 1em;
     margin-inline: 1em;
     border-spacing: 5px;
     width: calc(100% - 2em);
     table-layout:auto;
-}
 
-thead {
-    background-color: #38383880;
-}
+    thead {
+        background-color: #38383880;
+    }
 
-td, th {
-    padding: 4px;
+    td, th {
+        padding: 4px;
+    }
 }
 
 p code {
@@ -428,6 +432,14 @@ pre {
 
 .mobile-hidden {
     display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
 }
 
 @media (max-width: 320px) {

@@ -1,0 +1,12 @@
+---
+title: Posts
+meta: <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+---
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+    {% for post in site.posts %}
+        <section>
+            <h3><a href="{{ post.url }}" class="no-underline">{{post.title}}</a></h3><span class="date">hi</span>
+        </section>
+    {% endfor %}
+</nav>

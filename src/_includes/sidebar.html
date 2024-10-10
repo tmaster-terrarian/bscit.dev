@@ -1,3 +1,7 @@
+{% capture ext %}
+    {%- include external-link-icon.html -%}
+{% endcapture %}
+
 <div class="sidebar">
     <!-- Navigation -->
     <details open>
@@ -6,8 +10,14 @@
             <section>
                 <ul class="capital">
                     <li><a href="/home">home</a></li>
-                    <li><a href="/works">creative works</a></li>
                     <li><a href="/index/">index</a></li>
+                    <li><a href="/posts/">posts</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>art &amp; music</h2>
+                <ul class="capital">
+                    <li><a href="/works">creative works</a></li>
                 </ul>
             </section>
             <section>
@@ -19,15 +29,15 @@
             <section>
                 <h2>games</h2>
                 <ul class="capital">
-                    <li><a href="https://tmasterterrarian.itch.io/beebo-clone" target="_blank">Bee Yourself{% include external-link-icon.html %}</a></li>
+                    <li><a href="https://tmasterterrarian.itch.io/beebo-clone" target="_blank">Bee Yourself{{ ext }}</a></li>
                 </ul>
             </section>
             <section>
                 <h2>elsewhere</h2>
                 <ul class="capital">
-                    <li><a href="https://github.com/tmaster-terrarian" target="_blank">github{% include external-link-icon.html %}</a></li>
-                    <li><a href="https://twitter.com/bscit_dev" target="_blank">twitter{% include external-link-icon.html %}</a></li>
-                    <li><a href="https://bscit.tumblr.com" target="_blank">tumblr{% include external-link-icon.html %}</a></li>
+                    <li><a href="https://github.com/tmaster-terrarian" target="_blank">github{{ ext }}</a></li>
+                    <li><a href="https://twitter.com/bscit_dev" target="_blank">twitter{{ ext }}</a></li>
+                    <li><a href="https://bscit.tumblr.com" target="_blank">tumblr{{ ext }}</a></li>
                 </ul>
             </section>
         </nav>
