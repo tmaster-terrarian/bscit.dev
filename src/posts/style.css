@@ -1,31 +1,49 @@
 nav.post-navigation {
     flex-direction: column;
 
-    section:first-child {
-        margin-block-start: 0;
-    }
-    section:last-child {
+    >a:last-child {
         margin-block-end: 0;
     }
 
-    section {
+    >a {
         background-color: #1f1f1f;
         border: 1px #383838 solid;
         border-radius: 0.5em;
-        padding: 0 1em;
+        padding: 1em;
+
+        display: block;
 
         width: 100%;
 
-        margin-block: 1em;
+        margin-block-end: 1em;
+
+        text-decoration: none;
+        overflow-x: hidden;
+        width: 100%;
+
+        transition: background-color 0.15s, border-color 0.15s;
 
         h3 {
             width: fit-content;
             display: inline-block;
+            margin: 0;
         }
+
         span.date {
-            position: relative;
-            top: -1px;
-            cursor: default;
+            padding-left: 1em;
+        }
+
+        span.tags {
+            
+        }
+    }
+
+    a:hover {
+        background-color: #242424;
+        border-color: #4b4b4b;
+
+        h3 {
+            text-decoration: underline;
         }
     }
 }

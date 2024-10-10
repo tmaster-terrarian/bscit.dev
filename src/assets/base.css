@@ -30,9 +30,17 @@ body {
     overflow-x: hidden;
 }
 
+flex {
+    display: flex;
+}
+
 ::selection {
     background: #135564;
     opacity: 0.5;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 *, :after, :before {
@@ -420,6 +428,22 @@ pre {
 
     overflow-x: scroll;
     scrollbar-gutter: 1em;
+}
+
+.muted {
+    color: #7c7c7c;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.flex-shrink {
+    flex-shrink: 1;
 }
 
 .footnote {
