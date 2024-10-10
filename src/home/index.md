@@ -55,7 +55,8 @@ meta:
         }
     </style>'
 
-after: '<details
+after:
+  - '<details
         style="grid-area: after;
             max-width: min(calc(185px + 1em), calc((100vw - 38rem - 6rem) / 2));"
         class="buttons mobile-hidden"
