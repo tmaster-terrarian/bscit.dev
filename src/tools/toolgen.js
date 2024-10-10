@@ -2,7 +2,7 @@ const __tools = document.getElementById("tools")
 
 function genWeb(imageSrc, link, name, descriptionHtml)
 {
-    __tools.innerHTML += /*html*/`
+    document.currentScript.outerHTML = /*html*/`
     <div class="tool">
         <div class="preview">
             <img src="${imageSrc}" width="165">
@@ -17,7 +17,7 @@ function genWeb(imageSrc, link, name, descriptionHtml)
 
 function genApp(imageSrc, link, name, descriptionHtml)
 {
-    __tools.innerHTML += /*html*/`
+    document.currentScript.outerHTML = /*html*/`
     <div class="tool">
         <div class="preview">
             <img src="${imageSrc}" width="165">
@@ -32,7 +32,7 @@ function genApp(imageSrc, link, name, descriptionHtml)
 
 function genWebApp(imageSrc, linkWeb, linkLocal, name, descriptionHtml)
 {
-    __tools.innerHTML += /*html*/`
+    document.currentScript.outerHTML = /*html*/`
     <div class="tool">
         <div class="preview">
             <img src="${imageSrc}" width="165">
