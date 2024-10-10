@@ -92,4 +92,9 @@ title: Home
     <h3 class="status-holder"><i><h1>bscit</h1><span>current status: {% include status.txt %}</span></i></h3>
 </div>
 <h2>{{ page.title }}</h2>
-<p>Hello, and welcome to my website!<br>I am mainly an artist and game developer, but I'm learning music too<br><br>It would be pretty cool if you checked out my stuff while you're here :D<br>I post whatever, mainly art, and on rare occasion game progress or music as well!</p>
+<p class="muted">Hello, and welcome to my website!
+<br>I am mainly an artist and game developer, but I'm learning music too
+<br>
+<br>It would be pretty cool if you checked out my stuff while you're here :D
+<br>I post whatever, mainly art, and on rare occasion game progress or music as well!
+</p>

@@ -3,18 +3,12 @@ title: Posts
 meta: <link href="./style.css" rel="stylesheet" type="text/css" media="all">
 ---
 
-{% assign posts_by_date = site.posts | sort: "date" %}
+{% assign posts_by_date = site.posts | sort: "date" | reverse %}
 
 <p class="muted">testing</p>
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
     {% for post in posts_by_date %}
-        <a href="{{ post.url }}">
-            <flex class="align-baseline">
-                <h3>{{post.title}}</h3>
-                <span class="date nowrap flex-shrink muted">{{ post.date | date: "%Y - %m" }}</span>
-            </flex>
-            <span class="tags muted">{{ post.tags | join: ", " }}</span>
-        </a>
+        {% include widgets/post.html post=post %}
     {% endfor %}
 </nav>

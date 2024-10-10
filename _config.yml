@@ -74,7 +74,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      permalink: /posts/:year/:month/:day/:title:output_ext
+      permalink: /posts/:categories/:title:output_ext
 
 baseurl: ""
 

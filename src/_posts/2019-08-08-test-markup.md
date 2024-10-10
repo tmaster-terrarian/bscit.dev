@@ -3,8 +3,8 @@ title: Test Markup
 description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 author: cotes
 date: 2019-08-08 11:33:00 +0800
-categories: [Blogging, Demo]
-tags: [typography, demo]
+categories: [Demo]
+tags: [typography]
 pin: true
 math: true
 emoji: true
@@ -68,20 +68,13 @@ Moon
 
 ## Prompts
 
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable -->
-> Tip<br>An example showing the `tip` type prompt.
-{: .prompt-tip }
+{% include prompts/tip.md text="An example showing the `tip` type prompt." %}
 
-> Info<br>An example showing the `info` type prompt.
-{: .prompt-info }
+{% include prompts/info.md text="An example showing the `info` type prompt." %}
 
-> Warning<br>An example showing the `warning` type prompt.
-{: .prompt-warning }
+{% include prompts/warning.md text="An example showing the `warning` type prompt." %}
 
-> Danger<br>An example showing the `danger` type prompt.
-{: .prompt-danger }
-<!-- markdownlint-restore -->
+{% include prompts/danger.md text="An example showing the `danger` type prompt." %}
 
 ## Tables
 

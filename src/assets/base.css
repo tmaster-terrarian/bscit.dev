@@ -343,6 +343,7 @@ blockquote.md, blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-
     background-color: #1f1f1f;
     background-blend-mode: lighten;
     border-left: 4px #383838 solid;
+    border-radius: 4px;
     margin-inline: 20px;
     padding-top: 1px;
     padding-bottom: 1px;
@@ -354,8 +355,6 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
     --color: var(--bscit-main-foregroundColor-lighter);
 
     border-color: var(--color);
-
-    border-radius: 4px;
 
     >:first-child {
         position: relative;
@@ -378,7 +377,7 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
 
 blockquote.prompt-tip {
     --img: url("/images/heroicons-tip.svg");
-    --color: var(--bscit-main-foregroundColor-lighter);
+    --color: rgb(27, 240, 98);
     background-color: rgb(from var(--color) r g b / 0.04);
 }
 blockquote.prompt-info {
@@ -415,9 +414,12 @@ table.md {
 }
 
 p code {
-    background-color: #1f1f1f;
+    background-color: #242424;
+    border: 1px #383838 solid;
     border-radius: 4px;
     color: var(--bscit-main-foregroundColor-lighter);
+
+    padding: 0 2px;
 }
 
 pre {
@@ -431,11 +433,47 @@ pre {
 }
 
 .muted {
-    color: #7c7c7c;
+    color: #808080;
+}
+
+ul.task-list {
+    list-style-type: none;
+    padding-inline-start: 2ch;
+}
+
+li ul.task-list {
+    border-left: 1px #383838 solid;
+    padding-inline-start: calc(2ch - 1px);
+}
+
+li::marker {
+    color: #808080;
+}
+
+dt {
+    margin-block-start: 0.5em;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.33em;
+    flex-wrap: wrap;
+
+    border-bottom: 1px #383838 solid;
+}
+dt::after {
+    content: ":";
+    color: #808080;
+}
+
+dd {
+    margin-left: 1ch;
 }
 
 .align-baseline {
     align-items: baseline;
+}
+
+.block {
+    display: block;
 }
 
 .nowrap {
