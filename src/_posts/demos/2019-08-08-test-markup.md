@@ -90,7 +90,7 @@ Moon
 
 ## Footnote
 
-Click the hook will locate the footnote[^fn-1], and here is another footnote[^fn-2]. {: .muted}
+Click the hook will locate the footnote[^fn-1], and here is another footnote[^fn-2].
 
 ## Inline code
 

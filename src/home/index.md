@@ -107,6 +107,6 @@ title: Home
     {% for post in posts_by_date limit: 5 %}
         {% include widgets/post-mini.html post=post %}
     {% else %}
-        <blockquote class="prompt muted">No posts right now. Have a nice day!</blockquote>
+        <blockquote class="prompt">No posts right now. Have a nice day!</blockquote>
     {% endfor %}
 </nav>
