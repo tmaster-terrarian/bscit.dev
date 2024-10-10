@@ -16,8 +16,7 @@
                 <h2>{{ page.title }}</h2>
             {% endunless %}
             {% if page.game %}
-                {% begincapture game %} {{ page.game }} {% endcapture %}
-                {% include widgets/game.html game=site.data.reviews[game] %}
+                {% include widgets/game.html game=site.data.reviews[page.game] %}
             {% endif %}
             {{ content }}
         </div>
