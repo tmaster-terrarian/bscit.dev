@@ -122,3 +122,5 @@ exclude:
 
 keep_files:
 - webdav.json
+- music/
+- ignorethis/
