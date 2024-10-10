@@ -12,9 +12,6 @@
         {% include sidebar.html %}
 
         <div class="content">
-            {% unless page.no-h2 %}
-                <h2>{{ page.title }}</h2>
-            {% endunless %}
             {% if page.game %}
                 {% assign game=site.data.reviews[page.game] %}
                 {% include widgets/game.html game=game %}

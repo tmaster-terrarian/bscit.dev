@@ -10,7 +10,7 @@
         {%- assign last_item = include.game.links | last -%}
         <span class="block muted c-default" style="margin-block-start: 0.5em;">
             {% for link in include.game.links %}
-                <a href="{{ link.url }}">link.name</a>{% unless link == last_item %} | {% endunless %}
+                <a href="{{ link.url }}">{{ link.name }}</a>{% unless link == last_item %} | {% endunless %}
             {% endfor %}
         </span>
     {% endif %}
