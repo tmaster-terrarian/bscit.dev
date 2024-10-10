@@ -1,14 +1,14 @@
 <div class="widget">
     <flex class="align-baseline">
         <h3>{{ include.game.title }}</h3>
-        <span class="ppl nowrap flex-shrink muted">score: {{ include.game.score }} / 10, <span title="Difference in recent months">{{ include.game.score_lately }}</span></span>
+        <span class="ppl nowrap flex-shrink muted c-default">{{ include.game.score }}/10<!--<span title="Difference in recent months">{{ include.game.score_lately }}</span>--></span>
     </flex>
-    <span class="block tags muted">
+    <span class="block tags muted c-default">
         {% include icons/heroicons-tag.svg %} {{ include.game.tags | join: ", " | lowercase }}
     </span>
     {% if include.game.links %}
         {%- assign last_item = include.game.links | last -%}
-        <span class="block muted c-default" style="margin-block-start: 0.5em;">
+        <span class="block muted" style="margin-block-start: 0.5em;">
             {% for link in include.game.links %}
                 <a href="{{ link.url }}">{{ link.name }}</a>{% unless link == last_item %} | {% endunless %}
             {% endfor %}
