@@ -1,0 +1,28 @@
+# example:
+#   title: The Last of Us Part 3 (GOTY Edition) - Directors Cut
+#   links:
+#   - url: https://example.com
+#     name: steam
+#   - url: https://example.com
+#     name: itch.io
+#   tags: [narrative, zombies, singleplayer]
+#   score: 8
+#   score_lately: "+0.00"
+
+ror2:
+  title: Risk of Rain 2
+  links:
+  - url: https://store.steampowered.com/app/632360/Risk_of_Rain_2/
+    name: steam
+  tags: [roguelike, singleplayer, pvp]
+  score: 10
+  score_lately: "-0.40"
+
+benbo:
+  title: SUPER BENBO QUEST TURBO DELUX
+  links:
+  - url: https://thumbtack.itch.io/benboquest
+    name: steam
+  tags: [action, humor, platformer, singleplayer]
+  score: 9
+  score_lately: "+0.00"

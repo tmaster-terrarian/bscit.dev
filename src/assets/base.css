@@ -339,6 +339,72 @@ main {
     cursor: pointer;
 }
 
+nav.post-navigation {
+    flex-direction: column;
+
+    .widget:last-child {
+        margin-block-end: 0;
+    }
+}
+
+.widget {
+    background-color: #1f1f1f;
+    /* border: 1px #383838 solid; */
+    border-radius: 0.5em;
+    padding: 1em;
+
+    box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.025), 0 5px 10px 5px rgba(0,0,0,0.05);
+
+    display: block;
+
+    width: 100%;
+
+    margin-block-end: 1em;
+
+    text-decoration: none;
+    overflow-x: hidden;
+    width: 100%;
+
+    transition-property: background-color, border-color;
+    transition-duration: 0.15s;
+
+    h1, h2, h3, h4, h5, h6 {
+        width: fit-content;
+        display: inline-block;
+        margin: 0;
+    }
+
+    svg {
+        height: 1em;
+        display: inline-block;
+        vertical-align: middle;
+        stroke-width: 1.75px;
+    }
+}
+
+.ppl {
+    padding-left: 1em;
+}
+
+.c-default {
+    cursor: default;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+a.widget:hover {
+    background-color: #242424;
+    border-color: #4b4b4b;
+}
+
+a.widget:active {
+    background-color: #282828;
+    border-color: #4f4f4f;
+    transition-duration: 0.05s;
+}
+
 blockquote.md, blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockquote.prompt-danger {
     background-color: #1f1f1f;
     background-blend-mode: lighten;
