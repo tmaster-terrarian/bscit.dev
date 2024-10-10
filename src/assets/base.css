@@ -361,7 +361,6 @@ nav.post-navigation {
 
     margin-block-end: 1em;
 
-    text-decoration: none;
     overflow-x: hidden;
     width: 100%;
 
@@ -382,16 +381,8 @@ nav.post-navigation {
     }
 }
 
-.ppl {
-    padding-left: 1em;
-}
-
-.c-default {
-    cursor: default;
-}
-
-.c-pointer {
-    cursor: pointer;
+a.widget {
+    text-decoration: none;
 }
 
 a.widget:hover {
@@ -403,6 +394,18 @@ a.widget:active {
     background-color: #282828;
     border-color: #4f4f4f;
     transition-duration: 0.05s;
+}
+
+.ppl {
+    padding-left: 1em;
+}
+
+.c-default {
+    cursor: default;
+}
+
+.c-pointer {
+    cursor: pointer;
 }
 
 blockquote.md, blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockquote.prompt-danger {
