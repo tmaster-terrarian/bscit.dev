@@ -6,18 +6,20 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "terminal.integrated.defaultProfile.linux": "zsh"
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "[shellscript]": {
+                    "files.eol": "\n",
+                    "editor.defaultFormatter": "mkhl.shfmt"
+                }
             },
             "extensions": [
-                // Liquid
                 "sissel.shopify-liquid",
-                // Shell
                 "timonwong.shellcheck",
                 "mkhl.shfmt",
-                // Common formatter
                 "EditorConfig.EditorConfig",
-
-                "throvn.js-html-template-strings"
+                "throvn.js-html-template-strings",
+                "mads-hartmann.bash-ide-vscode",
+                "mniak.shell-debugger"
             ]
         }
     }

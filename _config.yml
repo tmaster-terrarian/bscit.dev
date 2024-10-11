@@ -78,6 +78,8 @@ defaults:
 
 baseurl: ""
 
+strict_front_matter: true
+
 footer_data:
   links:
     - url: https://github.com/tmaster-terrarian
@@ -119,6 +121,7 @@ exclude:
 - vendor/cache/
 - vendor/gems/
 - vendor/ruby/
+- serve.sh
 
 keep_files:
 - webdav.json
