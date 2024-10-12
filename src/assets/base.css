@@ -1,4 +1,4 @@
-html {
+:root {
     --bscit-main-foregroundColor: rgb(204, 204, 204);
 
     --bscit-main-foregroundColor-lighter: rgb(220, 220, 220);
@@ -10,9 +10,11 @@ html {
 
     --bscit-main-content-width: 38rem;
 
-    background-color: var(--bscit-main-backgroundColor);
-
     color-scheme: dark;
+}
+
+html {
+    background-color: var(--bscit-main-backgroundColor);
 }
 
 body {
@@ -108,10 +110,8 @@ footer:not(.ignore) {
     background-color: #FE3C4940;
 
     >div:first-of-type {
-        position: relative;
         width: min(100%, var(--bscit-main-width));
-        left: 50%;
-        transform: translate(-50%, 0);
+        margin: auto;
     }
 }
 
@@ -281,7 +281,7 @@ main {
     }
 
     .path {
-        color: rgba(204, 204, 204, 0.5);
+        color: #808080;
     }
 
     .path-icon {
@@ -367,18 +367,24 @@ nav.post-navigation {
     transition-property: background-color, border-color;
     transition-duration: 0.15s;
 
-    h1, h2, h3, h4, h5, h6 {
-        width: fit-content;
-        display: inline-block;
-        margin: 0;
-    }
-
     svg {
         height: 1em;
         display: inline-block;
         vertical-align: middle;
         stroke-width: 1.75px;
     }
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.margin-0 {
+    margin: 0;
 }
 
 a.widget {
@@ -516,17 +522,13 @@ li ul.task-list {
 }
 
 li::marker {
-    color: #808080;
+    color: #676767;
 }
 
 dt {
     margin-block-start: 0.5em;
     font-weight: bold;
-    font-style: italic;
-    font-size: 1.33em;
     flex-wrap: wrap;
-
-    border-bottom: 1px #383838 solid;
 }
 dt::after {
     content: ":";

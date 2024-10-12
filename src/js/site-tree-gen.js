@@ -1,3 +1,5 @@
+import CookieManager from "./CookieManager.js";
+
 const arrowsHTML = `<img src="/images/heroicons-chevron-right.svg" class="path path-icon ellipsis"><img src="/images/heroicons-chevron-down.svg" class="path path-icon arrow">`;
 
 'use strict';
@@ -6,6 +8,17 @@ export const directory = function(fileName, fileList)
 {
     const obj = {};
     obj.type = "dir";
+    obj.fileName = fileName;
+    obj.path = "/" + fileName;
+    obj.fileList = fileList;
+
+    return obj;
+};
+
+export const directory_file = function(fileName, fileList)
+{
+    const obj = {};
+    obj.type = "dir+file";
     obj.fileName = fileName;
     obj.path = "/" + fileName;
     obj.fileList = fileList;
@@ -44,6 +57,15 @@ function parse(fileList, fileName)
                 + `</a>`;
         }
 
+        if(item.type === "dir+file")
+        {
+            item.fileList = parse(item.fileList, item.path);
+
+            item.fileName = `<a href="${item.path}" class="no-underline"><b>` + item.fileName
+                .replaceAll("/", `<span class="path">/</span>`)
+                + `</a></b>`;
+        }
+
         if(item.type === "dir")
         {
             item.fileList = parse(item.fileList, item.path);
@@ -59,6 +81,7 @@ function parse(fileList, fileName)
     return list;
 }
 
+let index = 0;
 function construct(fileList)
 {
     let str = "";
@@ -72,16 +95,22 @@ function construct(fileList)
             str += `<li>${item.fileName}</li>`;
         }
 
-        if(item.type === "dir")
+        if(item.type === "dir" || item.type === "dir+file")
         {
+            let ind = index++;
+            let openAttr = "";
+            if(CookieManager.getStorage(CookieManager.StorageType.local, `site-tree_${ind}`) === "open")
+                openAttr = " open"
+
             str += /*html*/`
-                <details>
+                <details id="site-tree_${ind}" class="site-tree-directory"${openAttr}>
                     <summary>${arrowsHTML}${item.fileName}<span class="ellipsis path">...</span></summary>
                     <ul>
                         ${construct(item.fileList)}
                     </ul>
                 </details>
             `;
+            ind++;
         }
     }
 
@@ -90,6 +119,8 @@ function construct(fileList)
 
 export const generate = function(fileList)
 {
+    index = 0;
+
     return /*html*/`
     <hr>
     <details open>
@@ -97,10 +128,10 @@ export const generate = function(fileList)
         <div class="site-tree">
             <section class="navlink-container">
                 <section class="notextmargin">
-                    <details open>
+                    <details id="site-tree_${index++}" class="site-tree-directory" open>
                         <summary><img src="/images/heroicons-chevron-right.svg" class="path path-icon ellipsis"><img src="/images/heroicons-chevron-down.svg" class="path path-icon arrow"><a class="no-underline" href="https://neocities.org/site/bscit" target="_blank"><b>root</b><span class="path">/</span></a><span class="ellipsis path">...</span></summary>
                         <ul>
-                            <details open>
+                            <details id="site-tree_${index++}" class="site-tree-directory" open>
                                 <summary><img src="/images/heroicons-chevron-right.svg" class="path path-icon ellipsis"><img src="/images/heroicons-chevron-down.svg" class="path path-icon arrow"><a class="no-underline" href="/"><b>bscit.dev</b><span class="path">/</span></a><span class="ellipsis path">...</span></summary>
                                 <ul>
                                     ${construct(parse(fileList, "/"))}

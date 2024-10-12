@@ -3,10 +3,13 @@
 
 <head>
     {% include head.html %}
+    {% if page.meta %}
+        {% include {{ page.meta }} %}
+    {% endif %}
 </head>
 
 <body>
-    {%  include header.html %}
+    {% include header.html %}
 
     <main>
         {% include sidebar.html %}
@@ -19,9 +22,13 @@
             {{ content }}
         </div>
 
-        {{ page.after }}
+        {% if page.after %}
+            {% include {{ page.after }} %}
+        {% endif %}
     </main>
-    {{ page.post-main }}
+    {% if page.post-main %}
+        {% include {{ page.post-main }} %}
+    {% endif %}
 
     {% include footer.html %}
 </body>

@@ -2,7 +2,7 @@
 title: Test Markup
 description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 author: cotes
-date: 2019-08-08 11:33:00 +0800
+date: 2024-10-09 11:33:00 -0700
 categories: [Demos]
 tags: [typography]
 math: true

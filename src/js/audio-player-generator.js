@@ -17,7 +17,7 @@ function createTrackPlayer(trackname, date, audiotype = "wav", sc = false)
         <hr style="border: none; height: 2px; background-color: #a4003b">
 
         <div class="audio-player">
-          <audio src="/music/${trackname}.${audiotype}" type="audio/${audiotype}"></audio>
+          <audio src="../music/${trackname}.${audiotype}" type="audio/${audiotype}"></audio>
           <div class="controls">
             <button class="player-button" title="play/pause">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="button-icon">

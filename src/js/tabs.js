@@ -2,7 +2,7 @@ var colors = ['#004731', '#53003b', '#250069'];
 
 function openTab(evt, tabName) {
   // Declare all variables
-  var i, tabcontent, tablinks;
+  var i, j, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -25,6 +25,14 @@ function openTab(evt, tabName) {
   var bg = document.getElementById("tabholder");
   bg.style.backgroundColor = colors[j];
   evt.currentTarget.className += " active";
+  if(window.history.replaceState)
+  {
+    window.history.replaceState({}, null, `${window.location.href.replace(window.location.search, "")}?tab=${tabName.replace("tab", "")}`);
+  }
+  else if(document.location.search != `?tab=${tabName.replace("tab", "")}`)
+  {
+    document.location.search = "tab=" + tabName.replace("tab", "");
+  }
 }
 
 function closeTabs(evt)

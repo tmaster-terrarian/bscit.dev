@@ -13,18 +13,34 @@
 
 <script type="module">
     import * as gen from "{{ '/js/site-tree-gen.js' | relative_url }}";
+    import CookieManager from "{{ '/js/CookieManager.js' | relative_url }}";
 
-    window.addEventListener("DOMContentLoaded", (event) => {
+    window.addEventListener("DOMContentLoaded", event => {
         document.getElementById("site-tree-holder").innerHTML = gen.generate([
-            // gen.directory("ignorethis/", [
-            //     gen.file("beebo-b665e3d/")
-            // ]),
+            gen.directory_file("posts/", [
+                {% for category in site.categories %}
+                gen.directory("{{ category[0] }}/".toLowerCase(), [
+                    {% for post in category[1] %}
+                    gen.file("{{ post.url }}".match(/[^\/]+\.\w+$/)[0]),
+                    {% endfor %}
+                ]),
+                {% endfor %}
+            ]),
             gen.file("index/"),
-            gen.file("snippets.html"),
             gen.file("tools/"),
             gen.file("works/"),
         ]);
-    })
-</script>
+    });
 
-{{ page.meta | join }}
+    window.addEventListener("beforeunload", event => {
+        if(document.visibilityState === "hidden")
+        {
+            let element = null, index = 0;
+            while((element = document.getElementById(`site-tree_${index}`)) !== null)
+            {
+                CookieManager.setStorage(CookieManager.StorageType.local, `site-tree_${index}`, element.hasAttribute("open") ? "open" : "closed");
+                index++;
+            }
+        }
+    });
+</script>

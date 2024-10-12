@@ -1,8 +1,7 @@
 ---
 title: Tools
-meta:
-- <link href="./style.css" rel="stylesheet" type="text/css" media="all">
-- <script src="./toolgen.js"></script>
+
+meta: pages/tools/meta.html
 ---
 
 <section id="tools">

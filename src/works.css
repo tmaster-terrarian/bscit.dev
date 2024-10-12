@@ -58,9 +58,13 @@ blockquote
   box-sizing: border-box;
 }
 
-.song-cover, .game-cover
+.song-cover
 {
   border: 2px solid white;
+}
+.game-cover
+{
+  border: 2px solid #a4003b;
 }
 .cover-rootkit
 {
