@@ -488,6 +488,51 @@ table.md {
     }
 }
 
+.task-list-item-checkbox {
+    --opacity: 0.5;
+    --content: url("/images/heroicons-circle.svg");
+    --saturation: 100;
+
+    appearance: none;
+    content: var(--content);
+    height: 1rem;
+    margin: 2px;
+    vertical-align: top;
+    filter: sepia(100%) hue-rotate(180deg) saturate(var(--saturation)) brightness(var(--opacity));
+
+    cursor: pointer;
+}
+
+.task-list-item-checkbox:checked {
+    --content: url("/images/heroicons-circle-check.svg");
+    --saturation: 900;
+    --opacity: 0.85;
+}
+
+.task-list-item-checkbox:disabled {
+    /* --opacity: 0.35; */
+
+    cursor: default;
+}
+
+.task-list-item-checkbox:hover:not(:disabled) {
+    --opacity: 0.6;
+}
+
+.task-list-item-checkbox:checked:hover:not(:disabled) {
+    --saturation: 600;
+    --opacity: 0.9;
+}
+
+.task-list-item-checkbox:active:not(:disabled) {
+    --opacity: 0.75;
+}
+
+.task-list-item-checkbox:checked:active:not(:disabled) {
+    --saturation: 500;
+    --opacity: 1;
+}
+
 p code {
     background-color: #242424;
     border: 1px #383838 solid;
