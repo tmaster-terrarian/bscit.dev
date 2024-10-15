@@ -1,3 +1,6 @@
+---
+---
+
 :root {
     --bscit-main-foregroundColor: rgb(204, 204, 204);
 
@@ -433,7 +436,7 @@ blockquote.md, blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-
     padding-left: calc(20px - 4px);
 }
 
-blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockquote.prompt-danger {
+%blockquote-prompt {
     --img: url("/images/heroicons-tip.svg");
     --color: var(--bscit-main-foregroundColor-lighter);
 
@@ -459,21 +462,25 @@ blockquote.prompt-tip, blockquote.prompt-info, blockquote.prompt-warning, blockq
 }
 
 blockquote.prompt-tip {
+    @extend %blockquote-prompt;
     --img: url("/images/heroicons-tip.svg");
     --color: rgb(27, 240, 98);
     background-color: rgb(from var(--color) r g b / 0.04);
 }
 blockquote.prompt-info {
+    @extend %blockquote-prompt;
     --img: url("/images/heroicons-info.svg");
     --color: rgb(63, 97, 250);
     background-color: rgb(from var(--color) r g b / 0.07);
 }
 blockquote.prompt-warning {
+    @extend %blockquote-prompt;
     --img: url("/images/heroicons-warning.svg");
     --color: orange;
     background-color: rgb(from var(--color) r g b / 0.04);
 }
 blockquote.prompt-danger {
+    @extend %blockquote-prompt;
     --img: url("/images/heroicons-error.svg");
     --color: rgb(240, 20, 64);
     background-color: rgb(from var(--color) r g b / 0.08);
