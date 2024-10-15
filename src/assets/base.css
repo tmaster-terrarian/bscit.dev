@@ -10,6 +10,10 @@
 
     --bscit-main-content-width: 38rem;
 
+    --font-mono: Consolas, Cuisine, 'Courier New', monospace;
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --font-code: Menlo, Monaco, Consalas, "Courier New", monospace;
+
     color-scheme: dark;
 }
 
@@ -158,6 +162,7 @@ main {
             }
 
             nav.navlink-container {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
                 section {
                     margin-bottom: 40px;
     
@@ -179,6 +184,7 @@ main {
     }
 
     .content {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
         grid-area: content;
 
         ul, ol {
@@ -313,6 +319,8 @@ main {
 .site-tree {
     overflow-x: scroll;
     max-width: calc((100vw - var(--bscit-main-content-width) - 6rem) / 2);
+
+    font-family: Menlo, Monaco, Consalas, "Courier New", monospace !important;
 
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
@@ -496,7 +504,9 @@ table.md {
     appearance: none;
     content: var(--content);
     height: 1rem;
-    margin: 2px;
+    width: 1rem;
+    margin: 2px 0;
+    margin-right: 4px;
     vertical-align: top;
     filter: sepia(100%) hue-rotate(180deg) saturate(var(--saturation)) brightness(var(--opacity));
 
@@ -533,7 +543,13 @@ table.md {
     --opacity: 1;
 }
 
+code, pre, kbd, samp, code * {
+    font-family: var(--font-code) !important;
+}
+
 p code {
+    font-size: 13px;
+
     background-color: #242424;
     border: 1px #383838 solid;
     border-radius: 4px;
@@ -543,6 +559,8 @@ p code {
 }
 
 pre {
+    font-size: 13px;
+
     background-color: #1f1f1f;
     border: 1px #383838 solid;
     border-radius: 0.5em;
