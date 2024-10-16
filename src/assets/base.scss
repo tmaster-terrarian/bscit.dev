@@ -595,6 +595,10 @@ li::marker {
     color: #676767;
 }
 
+cite:before {
+    content: "- ";
+}
+
 dt {
     margin-block-start: 0.5em;
     font-weight: bold;
