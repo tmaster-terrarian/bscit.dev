@@ -13,12 +13,12 @@
 
     --bscit-main-content-width: 38rem;
 
-    --font-mono: Consolas, Cuisine, 'Courier New', monospace;
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --font-code: Menlo, Monaco, Consalas, "Courier New", monospace;
-
     color-scheme: dark;
 }
+
+$font-mono: Consolas, Cuisine, monospace;
+$font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-code: Menlo, Monaco, Consalas, monospace;
 
 html {
     background-color: var(--bscit-main-backgroundColor);
@@ -30,7 +30,7 @@ body {
     color: var(--bscit-main-foregroundColor);
     /* background-color: var(--bscit-main-backgroundColor-secondary); */
 
-    font-family: Consolas, Cuisine, 'Courier New', monospace;
+    font-family: $font-mono;
 
     margin: 0 0 0.5rem;
 
@@ -165,7 +165,7 @@ main {
             }
 
             nav.navlink-container {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+                font-family: $font-sans-serif;
                 section {
                     margin-bottom: 40px;
     
@@ -187,7 +187,7 @@ main {
     }
 
     .content {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-family: $font-sans-serif;
         grid-area: content;
 
         ul, ol {
@@ -323,7 +323,7 @@ main {
     overflow-x: scroll;
     max-width: calc((100vw - var(--bscit-main-content-width) - 6rem) / 2);
 
-    font-family: Menlo, Monaco, Consalas, "Courier New", monospace !important;
+    font-family: $font-mono;
 
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
@@ -382,7 +382,10 @@ nav.post-navigation {
         height: 1em;
         display: inline-block;
         vertical-align: middle;
-        stroke-width: 1.75px;
+    }
+
+    span.tags {
+        font-family: $font-mono;
     }
 }
 
@@ -518,11 +521,13 @@ table.md {
     filter: sepia(100%) hue-rotate(180deg) saturate(var(--saturation)) brightness(var(--opacity));
 
     cursor: pointer;
+
+    user-select: none;
 }
 
 .task-list-item-checkbox:checked {
     --content: url("/images/heroicons-circle-check.svg");
-    --saturation: 900;
+    --saturation: 800;
     --opacity: 0.85;
 }
 
@@ -537,7 +542,7 @@ table.md {
 }
 
 .task-list-item-checkbox:checked:hover:not(:disabled) {
-    --saturation: 600;
+    --saturation: 500;
     --opacity: 0.9;
 }
 
@@ -546,15 +551,15 @@ table.md {
 }
 
 .task-list-item-checkbox:checked:active:not(:disabled) {
-    --saturation: 500;
+    --saturation: 400;
     --opacity: 1;
 }
 
 code, pre, kbd, samp, code * {
-    font-family: var(--font-code) !important;
+    font-family: $font-code;
 }
 
-p code {
+p code:not(.filepath) {
     font-size: 13px;
 
     background-color: #242424;
@@ -563,6 +568,10 @@ p code {
     color: var(--bscit-main-foregroundColor-lighter);
 
     padding: 0 2px;
+}
+
+p code.filepath {
+    font-weight: bold;
 }
 
 pre {
