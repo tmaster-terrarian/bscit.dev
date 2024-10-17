@@ -1,6 +1,23 @@
 ---
 ---
 
+html {
+    --bscit-main-foregroundColor: rgb(204, 204, 204);
+
+    --bscit-main-foregroundColor-lighter: rgb(220, 220, 220);
+
+    --bscit-main-backgroundColor: rgb(24, 24, 24);
+    --bscit-main-backgroundColor-secondary: rgb(32, 32, 32);
+
+    --bscit-main-width: 1360px;
+
+    --bscit-main-content-width: 38rem;
+
+    color-scheme: dark;
+
+    background-color: var(--bscit-main-backgroundColor);
+}
+
 @font-face {
     font-family: "Consolas";
     src:
@@ -33,28 +50,9 @@
     font-style: italic;
 }
 
-:root {
-    --bscit-main-foregroundColor: rgb(204, 204, 204);
-
-    --bscit-main-foregroundColor-lighter: rgb(220, 220, 220);
-
-    --bscit-main-backgroundColor: rgb(24, 24, 24);
-    --bscit-main-backgroundColor-secondary: rgb(32, 32, 32);
-
-    --bscit-main-width: 1360px;
-
-    --bscit-main-content-width: 38rem;
-
-    color-scheme: dark;
-}
-
 $font-mono: "Consolas", Cuisine, monospace;
 $font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$font-code: Menlo, Monaco, "Consalas", monospace;
-
-html {
-    background-color: var(--bscit-main-backgroundColor);
-}
+$font-code: Menlo, Monaco, "Consalas", Cuisine, monospace;
 
 body {
     position: relative;
