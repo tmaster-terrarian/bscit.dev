@@ -1,6 +1,14 @@
 ---
 ---
 
+@font-face {
+    font-family: "Consolas";
+    src:
+        local("Consolas"),
+        url("Consolas.woff2") format("woff2"),
+        url("Consolas.ttf") format("ttf");
+}
+
 :root {
     --bscit-main-foregroundColor: rgb(204, 204, 204);
 
@@ -16,9 +24,9 @@
     color-scheme: dark;
 }
 
-$font-mono: Consolas, Cuisine, monospace;
+$font-mono: "Consolas", Cuisine, monospace;
 $font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$font-code: Menlo, Monaco, Consalas, monospace;
+$font-code: Menlo, Monaco, "Consalas", monospace;
 
 html {
     background-color: var(--bscit-main-backgroundColor);
