@@ -4,33 +4,33 @@
 @font-face {
     font-family: "Consolas";
     src:
-        local("Consolas"), local("Consola"),
-        url("consola.ttf") format("ttf");
+        local("Consolas"),
+        url("./consola.ttf");
 }
 
 @font-face {
     font-family: "Consolas";
     src:
-        local("Consolas Bold"), local("Consolas-Bold"), local("Consolab"),
-        url("consolab.ttf") format("ttf");
+        local("Consolas Bold"), local("Consolas-Bold"),
+        url("./consolab.ttf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Consolas";
     src:
-        local("Consolas Italic"), local("Consolas-Italic"), local("Consolai"),
-        url("consolai.ttf") format("ttf");
-    font-style: italic, oblique;
+        local("Consolas Italic"), local("Consolas-Italic"),
+        url("./consolai.ttf");
+    font-style: italic;
 }
 
 @font-face {
     font-family: "Consolas";
     src:
-        local("Consolas Bold Italic"), local("Consolas-Bold-Italic"), local("Consolaz"),
-        url("consolaz.ttf") format("ttf");
+        local("Consolas Bold Italic"), local("Consolas-Bold-Italic"),
+        url("./consolaz.ttf");
     font-weight: bold;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 :root {
