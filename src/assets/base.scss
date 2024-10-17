@@ -62,7 +62,7 @@ body {
 
     font-family: $font-mono;
 
-    margin: 0 0 0.5rem;
+    margin: 0;
 
     font-size: 15px;
 
@@ -145,6 +145,7 @@ footer:not(.ignore) {
 
     >div:first-of-type {
         width: min(100%, var(--bscit-main-width));
+        height: 3.67em;
         margin: auto;
     }
 }
