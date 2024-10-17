@@ -7,29 +7,31 @@
         local("Consolas"), local("consola"),
         url("consola.ttf") format("ttf");
     font-style: normal;
+    font-weight: normal;
 }
 
 @font-face {
-    font-family: "Consolas";
+    font-family: "Consolas Bold";
     src:
-        local("Consolas Bold"), local("Consolas-Bold"), local("consolab"),
+        local("Consolas Bold"), local("Consolas-Bold"), local("Consolab"),
         url("consolab.ttf") format("ttf");
     font-style: normal;
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "Consolas";
+    font-family: "Consolas Italic";
     src:
-    local("Consolas Italic"), local("Consolas-Italic"), local("consolai"),
+    local("Consolas Italic"), local("Consolas-Italic"), local("Consolai"),
         url("consolai.ttf") format("ttf");
     font-style: italic;
+    font-weight: normal;
 }
 
 @font-face {
-    font-family: "Consolas";
+    font-family: "Consolas Bold Italic";
     src:
-    local("Consolas Bold Italic"), local("Consolas-Bold-Italic"), local("consolaz"),
+    local("Consolas Bold Italic"), local("Consolas-Bold-Italic"), local("Consolaz"),
         url("consolaz.ttf") format("ttf");
     font-style: italic;
     font-weight: bold;
