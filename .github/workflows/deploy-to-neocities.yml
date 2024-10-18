@@ -42,10 +42,17 @@ jobs:
     - name: Build with Jekyll
       run: bundle exec jekyll build
 
-    # When the dist_dir is ready, deploy it to neocities
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: true
         dist_dir: public
+
+    - name: Deploy to nekoweb
+      uses: deploy2nekoweb/deploy2nekoweb@v4
+      with:
+        nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+        nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
+        nekoweb-folder: '/'
+        directory: 'public'
