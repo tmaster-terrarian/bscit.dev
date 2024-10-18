@@ -49,10 +49,10 @@ jobs:
         cleanup: true
         dist_dir: public
 
-    - name: Deploy to nekoweb
-      uses: deploy2nekoweb/deploy2nekoweb@v4
-      with:
-        nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-        nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-        nekoweb-folder: '/'
-        directory: 'public'
+    # - name: Deploy to nekoweb
+    #   uses: deploy2nekoweb/deploy2nekoweb@v4
+    #   with:
+    #     nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+    #     nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
+    #     nekoweb-folder: '/'
+    #     directory: 'public'
