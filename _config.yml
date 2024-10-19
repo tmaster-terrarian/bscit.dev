@@ -80,25 +80,6 @@ baseurl: ""
 
 strict_front_matter: true
 
-footer_data:
-  links:
-    - url: https://github.com/tmaster-terrarian
-      name: github
-    - url: https://twitter.com/bscit_dev
-      name: twitter
-    - url: https://ko-fi.com/bscit
-      name: ko-fi
-    - url: https://tumblr.com/bscit
-      name: tumblr
-    - url: https://tmasterterrarian.itch.io
-      name: itch.io
-    - url: https://youtube.com/@bscitdev
-      name: youtube
-    - url: https://twitch.tv/bscit_dev
-      name: twitch
-    - url: https://soundcloud.com/bscit
-      name: soundcloud
-
 plugins:
   - jekyll-seo-tag
   - jekyll-spaceship

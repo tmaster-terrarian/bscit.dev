@@ -67,6 +67,8 @@ body {
     font-size: 15px;
 
     overflow-x: hidden;
+
+    min-height: calc(100vh - 3.67em - 42px);
 }
 
 flex {
@@ -136,17 +138,20 @@ header {
 }
 
 footer:not(.ignore) {
-    padding: 20px 1rem;
+    padding: 20px calc(1em + 1rem);
     width: 100%;
 
     border-top: 1px solid #fe3e4b80;
 
     background-color: #FE3C4940;
 
+    position: absolute;
+    top: 100%;
+
     >div:first-of-type {
         width: min(100%, var(--bscit-main-width));
-        height: 3.67em;
         margin: auto;
+        text-align: center;
     }
 }
 
@@ -725,17 +730,21 @@ dd {
         margin: 0 1em 1em 0;
     }
     main .sidebar details nav.navlink-container section:first-of-type {
-        margin-top: 1rem;
+        margin-top: 1.2em;
     }
 }
 
 @media (min-width: 991px) {
+    body {
+        min-height: unset;
+    }
+
     .mobile-hidden {
         display: initial;
     }
 
     footer:not(.ignore) {
-        top: max(calc(100% + 1rem), 100vh);
+        top: max(calc(100% + 1rem), calc(100vh - 3.67em - 42px));
     }
 
     main .sidebar details nav.navlink-container {

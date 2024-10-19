@@ -11,7 +11,7 @@
 }
 .covertd a
 {
-  display: inline-block;
+  display: flex;
 }
 
 .titletd
@@ -65,6 +65,9 @@ blockquote
 .game-cover
 {
   border: 2px solid #a4003b;
+  width: 200px;
+  height: auto;
+  aspect-ratio: 5/3;
 }
 .cover-rootkit
 {
@@ -85,7 +88,6 @@ blockquote
   border-radius: 3px;
   margin: 2px 0;
   width: 100%;
-  height: 204px;
 }
 
 .gameholder
@@ -98,7 +100,7 @@ td h1
 {
   text-align: left;
   margin: 0;
-  padding: 2px 0;
+  padding: 2px;
 }
 
 .datespan
@@ -153,7 +155,7 @@ img
 
 .volume-control
 {
-  width: min(200px, calc(100% - 8px));
+  width: min(200px, 100%);
   padding: 2px;
   padding-right: 6px;
   background-color: black;
@@ -230,28 +232,65 @@ img
   background: transparent;
 }
 
-@media screen and (max-width: 556px) {
+@media (max-width: 640px) and (min-width: 557px) {
+  .song-cover {
+    width: 30.625vw;
+    height: 30.625vw;
+  }
+}
+
+@media (max-width: 556px) {
   .covertd {
-    display: none !important;
+    padding-left: 8px;
+  }
+  .song-cover {
+    width: 90px;
+    height: 90px;
   }
   .songholder {
-    height: max-content;
+    height: fit-content;
     padding: 0.75em 0;
   }
   .songholder table {
     width: 100%;
   }
-}
-@media screen and (max-width: 333px) {
-  .player-total-time {
-    display: none !important;
-  }
   .titletd h1 {
     font-size: 1.5em;
   }
 }
-@media screen and (max-width: 246px) {
+
+@media (max-width: 400px) {
+  .volume-control {
+    width: 100%;
+  }
   #tracks {
-    border-radius: 0 0 6px 6px !important;
+    border-radius: 0 0 6px 6px;
+  }
+  .covertd {
+    display: none;
+  }
+  .titletd hr {
+    max-height: 1px;
+  }
+}
+
+@media (max-width: 320px) {
+  .player-total-time {
+    display: none;
+  }
+  .titletd h1 {
+    font-size: 1.25em;
+  }
+  .titletd .controls {
+    margin-top: 0;
+  }
+  .songholder .titletd hr {
+    display: none;
+  }
+}
+
+@media (max-width: 290px) {
+  .game-cover {
+    width: 100%;
   }
 }
