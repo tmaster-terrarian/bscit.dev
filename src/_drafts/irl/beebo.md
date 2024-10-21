@@ -1,7 +1,7 @@
 ---
 title: Beebo
 description: d
-categories: [IRL]
+categories: [irl]
 tags: [death, rats]
 emoji: true
 no-h2: true

@@ -3,7 +3,7 @@ title: Test Markup
 description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 author: cotes
 date: 2019-08-09 11:33:00 +0800
-categories: [Demos]
+categories: [demos]
 tags: [typography]
 math: true
 emoji: true

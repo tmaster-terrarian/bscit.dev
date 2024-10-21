@@ -1,7 +1,7 @@
 ---
 title: Hello World
 description: What's this? A rat? In MY household?!
-categories: [IRL]
+categories: [irl]
 tags: [death, rats]
 emoji: true
 ---
