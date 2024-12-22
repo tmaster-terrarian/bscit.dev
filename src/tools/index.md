@@ -12,6 +12,8 @@ meta: pages/tools/meta.html
             "Conch",
             `<p class="muted">Small experimental web app. Created to learn more about programming language parsing and execution.</p>`
         );
+    </script>
+    <script>
         genWebApp(
             "../images/tools/buckshot-counter-preview.png",
             "https://tmaster-terrarian.github.io/buckshot-counter/",
