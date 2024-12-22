@@ -12,7 +12,7 @@
 
 .tool div.preview
 {
-  width: 160px;
+  width: 162px;
   position: relative;
 }
 
@@ -28,7 +28,7 @@
 {
   box-sizing: border-box;
   margin-left: 1em;
-  width: calc(100% - 1em - 160px);
+  width: calc(100% - 1em - 162px);
   h3 {
     margin-block-start: 0;
   }
