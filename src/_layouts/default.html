@@ -18,9 +18,10 @@
             {% unless page.no-h2 %}
                 <h2>{{ page.title }}</h2>
             {% endunless %}
+            {% if page.src %}
+                <p><a href="https://raw.githubusercontent.com/tmaster-terrarian/bscit.dev/refs/heads/main/src/_posts/{{page.src}}">Download raw page</a></p>
+            {% endif %}
             {{ content }}
-            <hr>
-            <a href="{{page.url}}" download>Download this page</a>
         </div>
 
         {% if page.after %}

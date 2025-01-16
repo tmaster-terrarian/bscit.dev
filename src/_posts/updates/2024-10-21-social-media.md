@@ -4,6 +4,7 @@ description: Leaving Twitter, life on the net, and the fuzzy future ahead
 author: bscit
 categories: [updates]
 tags: [social, website]
+src: "updates/2024-10-21-social-media.md"
 ---
 
 Here on Neocities, most of us are pretty familiar with what's been happening on Twitter. Today I'm going to talk about some pretty worrying news thats been coming up lately, both regarding Twitter and regarding social media overall.
