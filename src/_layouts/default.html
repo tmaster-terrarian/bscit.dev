@@ -19,6 +19,8 @@
                 <h2>{{ page.title }}</h2>
             {% endunless %}
             {{ content }}
+            <hr>
+            <a href="{{page.url}}" download>Download this page</a>
         </div>
 
         {% if page.after %}
