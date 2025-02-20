@@ -7,6 +7,7 @@ categories: [demos]
 tags: [typography]
 math: true
 emoji: true
+layout: default-legacy
 ---
 
 ## Headings
@@ -67,13 +68,13 @@ Moon
 
 ## Prompts
 
-{% include prompts/tip.md text="An example showing the `tip` type prompt." %}
+{% include legacy/prompts/tip.md text="An example showing the `tip` type prompt." %}
 
-{% include prompts/info.md text="An example showing the `info` type prompt." %}
+{% include legacy/prompts/info.md text="An example showing the `info` type prompt." %}
 
-{% include prompts/warning.md text="An example showing the `warning` type prompt." %}
+{% include legacy/prompts/warning.md text="An example showing the `warning` type prompt." %}
 
-{% include prompts/danger.md text="An example showing the `danger` type prompt." %}
+{% include legacy/prompts/danger.md text="An example showing the `danger` type prompt." %}
 
 ## Tables
 
@@ -128,7 +129,7 @@ export function approach(value, target, rate)
         return Math.max((value - rate), target);
 }
 ```
-{: file='/js/math.js'}
+{: file='/legacy/js/math.js'}
 
 ## Mathematics
 
@@ -151,21 +152,21 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ### Default (with caption)
 
-![Desktop View](/images/cover-10-24.png){: width="100%" .h-auto }
+![Desktop View](/legacy/images/cover-10-24.png){: width="100%" .h-auto }
 _Full screen width and center alignment_
 
 ### Left aligned
 
-![Desktop View](/images/cover-10-24.png){: width="75%" .w-75 .h-auto}
+![Desktop View](/legacy/images/cover-10-24.png){: width="75%" .w-75 .h-auto}
 
 ### Float to left
 
-![Desktop View](/images/cover-10-24.png){: width="50%" .w-50 .h-auto .left}
+![Desktop View](/legacy/images/cover-10-24.png){: width="50%" .w-50 .h-auto .left}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ### Float to right
 
-![Desktop View](/images/cover-10-24.png){: width="50%" .w-50 .h-auto .right}
+![Desktop View](/legacy/images/cover-10-24.png){: width="50%" .w-50 .h-auto .right}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ## Reverse Footnote

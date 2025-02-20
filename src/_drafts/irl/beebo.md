@@ -5,6 +5,7 @@ categories: [irl]
 tags: [death, rats]
 emoji: true
 no-h2: true
+layout: default-legacy
 ---
 
 ## Beebo

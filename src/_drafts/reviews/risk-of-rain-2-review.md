@@ -5,7 +5,7 @@ categories: [reviews]
 tags: [gaming]
 emoji: true
 
-layout: review
+layout: review-legacy
 game: ror2
 ---
 

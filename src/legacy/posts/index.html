@@ -1,0 +1,14 @@
+---
+title: Posts
+layout: default-legacy
+---
+
+{% assign posts_by_date = site.posts | sort: "date" | reverse %}
+
+<p class="muted">testing</p>
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+    {% for post in posts_by_date %}
+        {% include legacy/widgets/post.html post=post %}
+    {% endfor %}
+</nav>

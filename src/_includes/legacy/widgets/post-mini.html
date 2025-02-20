@@ -1,0 +1,12 @@
+<a href="{{ include.post.url }}" class="widget" style="padding: 0.75em">
+    <flex class="align-baseline">
+        <h4 class="w-fit-content d-inline-block margin-0">{{ include.post.title }}</h4>
+        <span class="ppl nowrap flex-shrink muted" style="font-size: 0.8em;">
+            {{ include.post.date | date: "%b %d %Y" }}
+            {% if include.post.draft %}
+                - DRAFT
+            {%- endif -%}
+        </span>
+    </flex>
+    <span class="block tags muted" style="font-size: 0.8em;">{% include legacy/icons/heroicons-tag.svg %} {{ include.post.tags | join: ", " | lowercase }}</span>
+</a>

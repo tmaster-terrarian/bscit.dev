@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include legacy/head.html %}
+    {% if page.meta %}
+        {% include {{ page.meta }} %}
+    {% endif %}
+</head>
+
+<body>
+    {% include legacy/header.html %}
+
+    <main>
+        {% include legacy/sidebar.html %}
+
+        <div class="content">
+            {% unless page.no-h2 %}
+                <h2>{{ page.title }}</h2>
+            {% endunless %}
+            {% if page.src %}
+                <p><a href="https://raw.githubusercontent.com/tmaster-terrarian/bscit.dev/refs/heads/main/src/_posts/{{page.src}}">Download raw page</a></p>
+            {% endif %}
+            {{ content }}
+        </div>
+
+        {% if page.after %}
+            {% include {{ page.after }} %}
+        {% endif %}
+    </main>
+    {% if page.post-main %}
+        {% include {{ page.post-main }} %}
+    {% endif %}
+
+    {% include legacy/footer.html %}
+</body>
+
+</html>

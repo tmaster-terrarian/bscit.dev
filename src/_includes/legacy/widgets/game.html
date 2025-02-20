@@ -1,0 +1,17 @@
+<div class="widget">
+    <flex class="align-baseline">
+        <h2 class="w-fit-content d-inline-block margin-0">{{ include.game.title }}</h2>
+        <span class="ppl nowrap flex-shrink muted c-default">{{ include.game.score }}/10<!--<span title="Difference in recent months">{{ include.game.score_lately }}</span>--></span>
+    </flex>
+    <span class="block tags muted c-default">
+        {% include legacy/icons/heroicons-tag.svg %} {{ include.game.tags | join: ", " | lowercase }}
+    </span>
+    {% if include.game.links %}
+        {%- assign last_item = include.game.links | last -%}
+        <span class="block muted" style="margin-block-start: 0.5em;">
+            {% for link in include.game.links %}
+                <a href="{{ link.url }}" target="_blank" aria-label="{{ link.name }} store page">{{ link.name }}</a>{% unless link == last_item %} | {% endunless %}
+            {% endfor %}
+        </span>
+    {% endif %}
+</div>
