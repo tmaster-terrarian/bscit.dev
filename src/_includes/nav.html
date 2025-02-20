@@ -1,0 +1,41 @@
+<nav>
+    <details class="nav" style="font-size: large">
+        <summary>nav</summary>
+        <span class="nav-list">
+            <a href="/home.html">home</a>
+            <a href="/about.html">about</a>
+            <a href="/projects.html">projects</a>
+            {% comment %} <details>
+                <summary>test</summary>
+                <span class="nav-list">
+                    <a href="/home.html">home</a>
+                    <a href="/about.html">about</a>
+                    <a href="/projects.html">projects</a>
+                </span>
+            </details> {% endcomment %}
+        </span>
+        <style>
+            nav {
+                details>summary {
+                    display: inline-block;
+                    min-width: 12ch;
+                }
+                details>summary::before {
+                    content: '+ ';
+                }
+                details[open]>summary::before {
+                    content: '- ';
+                }
+                .nav-list {
+                    display: inline-flex;
+                    flex-direction: column;
+                    /* gap: 2ch; */
+                }
+                .nav-list>a {
+                    margin-left: 2ch;
+                    width: fit-content;
+                }
+            }
+        </style>
+    </details>
+</nav>
