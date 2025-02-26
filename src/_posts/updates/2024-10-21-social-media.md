@@ -18,7 +18,7 @@ This has been the final nail in the coffin for a *ton* of individual artists suc
 
 ### Alternatives
 
-So, the question at this point is: "what now?" So far, the answer to that has been difficult to come up with, but there have been a few things worth noting. Blue Sky is shaping up really well recently (and I even already have a [profile](https://bsky.app/profile/bscit.dev) on there :3), and, other social platforms such as Fediverse or whatever Threads is, have been showing up lately too.
+So, the question at this point is: "what now?" So far, the answer to that has been difficult to come up with, but there have been a few things worth noting. BlueSky is shaping up really well recently (and I even already have a [profile](https://bsky.app/profile/bscit.dev) on there :3), and, other social platforms such as Fediverse or whatever Threads is, have been showing up lately too.
 
 The reality is, in this world we can't have a perfect, unified platform and expect it to last. So our best option is to spread out and find our community, wherever that may be, from private Discord servers to things like Mastodon, there's a lot of places available to go right now.
 
@@ -26,9 +26,9 @@ The reality is, in this world we can't have a perfect, unified platform and expe
 
 As of October 1st, Cohost has begun the process of a [permanent sunset](https://cohost.org/staff/post/7611443-cohost-to-shut-down), due to the competition with other "Twitter-likes," as well as the crushingly high costs for what the developers could afford to keep it running. A devastating event that shows how fragile these new platforms still are.
 
-Blue Sky is planning to become "Twitter 2," essentially recreating as much of the Twitter experience as possible, which may or may not go well. In the end it really depends on who chooses to use it and who doesn't. As one of my friends has stated in the recent past, Blue Sky is good right now because none of the dumb parts of Twitter have moved in yet.
+BlueSky is planning to become "Twitter 2," essentially recreating as much of the Twitter experience as possible, which may or may not go well. In the end it really depends on who chooses to use it and who doesn't. As one of my friends has stated in the recent past, BlueSky is good right now because none of the dumb parts of Twitter have moved in yet.
 
-As for Fediverse and similarly decentralized places, their instances are primarily comprised of hobbyists and programmers, so there's not a lot of regular boring people filling up the space. If you *are* a "regular boring person" (my condolences, but I get that sometimes the simple life can be cool), then you're going to have a rough time there looking for similarly simple people, or similarly simple-to-use platforms.
+As for Fediverse and similarly decentralized places, their instances are primarily comprised of hobbyists and programmers, so there's not a lot of average people filling up the space.
 
 Part of the problem is that Twitter is still an internet superpower, and thus it can't truly "die" beyond the point of becoming hollow and colorless, and for the alternatives, besides Blue Sky or Neocities/Nekoweb, there is no "THE place to hang out," which is difficult for a lot of people to adjust to.
 
