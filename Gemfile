@@ -3,5 +3,5 @@
 source "https://rubygems.org"
 
 gem 'jekyll'
-gem 'jekyll-seo-tag'
-gem 'jekyll-spaceship', group: :jekyll_plugins
+gem 'jekyll-wikirefs', group: :jekyll_plugins
+gem 'jekyll-commonmark', group: :jekyll_plugins

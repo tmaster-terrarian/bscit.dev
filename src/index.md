@@ -1,6 +1,6 @@
 ---
 title: ENTRYPOINT
-layout: entry
+layout: basic
 ---
 
 <style>
@@ -26,7 +26,7 @@ layout: entry
 </style>
 
 <menu>
-    <a href="./home.html" class="n">
+    <a href="./site/home.html" class="n">
         <h1>bscit.dev</h1>
     </a>
 </menu>

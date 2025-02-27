@@ -47,7 +47,7 @@ jobs:
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: true
-        dist_dir: public
+        dist_dir: site
 
     # - name: Deploy to nekoweb
     #   uses: deploy2nekoweb/deploy2nekoweb@v4
@@ -55,4 +55,4 @@ jobs:
     #     nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
     #     nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
     #     nekoweb-folder: '/'
-    #     directory: 'public'
+    #     directory: 'site'

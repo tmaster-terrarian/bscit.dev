@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-bundle exec jekyll s -DI
+bundle exec jekyll s -D

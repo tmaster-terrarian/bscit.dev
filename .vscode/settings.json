@@ -1,5 +1,5 @@
 {
-    "livePreview.serverRoot": "public",
+    "livePreview.serverRoot": "site",
     "[liquid]": {
         "editor.formatOnSave": false
     },

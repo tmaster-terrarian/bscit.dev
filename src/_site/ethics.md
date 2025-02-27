@@ -1,0 +1,5 @@
+---
+title: ethics
+---
+
+# ethics

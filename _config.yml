@@ -1,13 +1,9 @@
-# metadata
 lang: en
 timezone: America/Los_Angeles
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
-
 title: bscit.dev
 
-description: >- # used by seo meta and the atom feed
+description: >-
   Personal website related to any and all things bscit
 
 url: "https://bscit.dev"
@@ -17,76 +13,70 @@ github:
 
 twitter:
   username: bscit_dev
-  card: summary_large_image
 
 social:
-  # Will be displayed as the default author of the posts and the copyright owner in the Footer
   name: bscit
-  # email: example@domain.com # change to your email address
+  email: bscitdv@gmail.com
   links:
     - https://github.com/tmaster-terrarian
-    - https://twitter.com/bscit_dev
+    - https://bsky.app/profile/bscit.dev
 
-# ↑ --------------------------
+encoding: utf-8
 
-# jekyll-spaceship settings › https://github.com/jeffreytse/jekyll-spaceship/blob/master/README.md
-# ↓ --------------------------
-# Where things are
-jekyll-spaceship:
-  # default enabled processors
-  processors:
-    - mathjax-processor
-    - polyfill-processor
-    - emoji-processor
-  mathjax-processor:
-    src:
-      - https://polyfill.io/v3/polyfill.min.js?features=es6
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    config:
-      tex:
-        inlineMath:
-          - ['$','$']
-          - ['\(','\)']
-        displayMath:
-          - ['$$','$$']
-          - ['\[','\]']
-      svg:
-        fontCache: 'global'
-    optimize: # optimization on building stage to check and add mathjax scripts
-      enabled: true # value `false` for adding to all pages
-      include: []   # include patterns for math expressions checking (regexp)
-      exclude: []   # exclude patterns for math expressions checking (regexp)
-  emoji-processor:
-    css:
-      class: emoji
-    src: https://github.githubassets.com/images/icons/emoji/
-
-# ↑ --------------------------
+markdown: CommonMark
+commonmark:
+  options: ['unsafe', 'hardbreaks']
 
 defaults:
   - scope:
       path: ""
     values:
-      image: /images/thumb.png
       author: bscit
       layout: default
   - scope:
       path: ""
       type: "posts"
     values:
-      permalink: /posts/:categories/:title:output_ext
+      permalink: /log/:year-:month-:day:output_ext
+
+collections:
+  wiki:
+    output: true
+    permalink: /site/:title:output_ext
+    wiki: true
+  site:
+    output: true
+    permalink: /site/:title:output_ext
 
 baseurl: ""
 
 strict_front_matter: true
 
 plugins:
-  - jekyll-seo-tag
-  - jekyll-spaceship
+  - jekyll-wikirefs
+
+wikilinks:
+  attributes:
+    enabled: true
+  css:
+    exclude: []
+    name:
+      typed: 'typed'
+      wiki: 'wiki-link'
+      web: 'web-link'
+      invalid_wiki: 'invalid-wiki-link'
+      # embed_container: 'embed-container'
+      # embed_title: 'embed-title'
+      # embed_content: 'embed-content'
+      # embed_link: 'embed-wiki-link'
+      # embed_image_container: 'embed-image-container'
+      # embed_image: 'embed-image'
+  enabled: true
+  exclude: []
 
 # file handling
 source: ./src
-destination: ./public
+destination: ./site
 
 exclude:
 - .git/
@@ -103,6 +93,7 @@ exclude:
 - vendor/gems/
 - vendor/ruby/
 - serve.sh
+- serve.bat
 
 keep_files:
 - webdav.json

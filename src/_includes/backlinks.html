@@ -1,0 +1,18 @@
+<div id="backlinks">
+    <span>incoming:</span>
+    {% for backlink in page.backlinks %}
+    {% assign linked_doc = site.documents | where: "url", backlink.url | first %}
+    <span><a class="wiki-link" href="{{ linked_doc.url }}">{{ linked_doc.title }}</a></span>
+    {% endfor %}
+</div>
+<style>
+    #backlinks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2ch;
+    }
+    #backlinks:first-child {
+        font-weight: bold;
+    }
+</style>

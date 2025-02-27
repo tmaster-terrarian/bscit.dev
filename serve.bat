@@ -1,1 +1,1 @@
-wsl -e \"bundle exec jekyll s -DI\"
+wsl -e \"bundle exec jekyll s -D\"
