@@ -1,5 +1,5 @@
 <div id="backlinks">
-    <span>incoming:</span>
+    <summary>incoming</summary>
     {% for backlink in page.backlinks %}
     {% assign linked_doc = site.documents | where: "url", backlink.url | first %}
     <span><a class="wiki-link" href="{{ linked_doc.url }}">{{ linked_doc.title }}</a></span>
@@ -12,7 +12,7 @@
         flex-wrap: wrap;
         gap: 2ch;
     }
-    #backlinks:first-child {
+    #backlinks>summary {
         font-weight: bold;
     }
 </style>

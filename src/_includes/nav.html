@@ -1,24 +1,16 @@
 <nav>
-    <details class="nav">
+    <details open class="nav">
         <summary>nav</summary>
         <span class="nav-list">
             <a href="/site/home.html">home</a>
             <a href="/site/about.html">about</a>
             <a href="/site/projects.html">projects</a>
-            {% comment %} <details>
-                <summary>test</summary>
-                <span class="nav-list">
-                    <a href="/site/home.html">home</a>
-                    <a href="/site/about.html">about</a>
-                    <a href="/site/projects.html">projects</a>
-                </span>
-            </details> {% endcomment %}
         </span>
         <style>
             nav {
                 details>summary {
                     display: inline-block;
-                    min-width: 12ch;
+                    width: 100%;
                 }
                 details>summary::before {
                     content: '+ ';
@@ -27,15 +19,27 @@
                     content: '- ';
                 }
                 .nav-list {
-                    display: inline-flex;
-                    flex-direction: column;
-                    /* gap: 2ch; */
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    column-gap: 2ch;
+                    row-gap: 0.5em;
+                    margin-top: 0.5em;
+                    margin-left: 2ch;
                 }
                 .nav-list>a {
-                    margin-left: 2ch;
                     width: fit-content;
                 }
             }
+            body[_nav-id="1"] nav .nav-list>a:nth-child(1) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="2"] nav .nav-list>a:nth-child(2) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="3"] nav .nav-list>a:nth-child(3) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="4"] nav .nav-list>a:nth-child(4) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="5"] nav .nav-list>a:nth-child(5) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="6"] nav .nav-list>a:nth-child(6) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="7"] nav .nav-list>a:nth-child(7) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="8"] nav .nav-list>a:nth-child(8) { color: black; background-color: white; text-decoration: none; }
+            body[_nav-id="9"] nav .nav-list>a:nth-child(9) { color: black; background-color: white; text-decoration: none; }
         </style>
     </details>
 </nav>

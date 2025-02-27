@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bscit.dev &mdash; {{ page.title }}</title>
-    {% include style.html %}
-    {% include style-center.html %}
+    <style>{% include style.css %}</style>
+    <style>{% include style-center.css %}</style>
 </head>
-<body>
+<body {% if page.nav %}_nav-id="{{ page.nav }}"{% endif %}>
     {% include nav.html %}
-    {{ content }}
+    {% include anchor_headings.html html=content h_min=2 h_max=3 generateId="true" %}
     {% if page.collection == "wiki" %}
         {% if page.backlinks.size >= 1 %}
             {% include backlinks.html %}

@@ -1,0 +1,18 @@
+:root {
+    background-color: #101010;
+    padding: 0;
+    display: grid;
+    grid-template-areas: '. body .' '. footer .';
+    grid-template-columns: 1fr min(100vh, 120ch) 1fr;
+    grid-template-rows: 1fr 3em;
+    min-height: 100vh;
+    width: 100vw;
+}
+body {
+    grid-area: body;
+    background-color: black;
+    padding: 1em 2ch;
+}
+footer {
+    grid-area: footer;
+}

@@ -1,5 +1,4 @@
 ---
-title: ethics
 ---
 
 # ethics

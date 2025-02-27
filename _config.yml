@@ -25,7 +25,11 @@ encoding: utf-8
 
 markdown: CommonMark
 commonmark:
-  options: ['unsafe', 'hardbreaks']
+  options: ['UNSAFE', 'HARDBREAKS', 'STRIKETHROUGH_DOUBLE_TILDE', 'FOOTNOTES']
+  extensions:
+    header_ids: true
+    multiline_block_quotes: true
+    underline: true
 
 defaults:
   - scope:
@@ -54,6 +58,7 @@ strict_front_matter: true
 
 plugins:
   - jekyll-wikirefs
+  - jekyll-titles-from-headings
 
 wikilinks:
   attributes:

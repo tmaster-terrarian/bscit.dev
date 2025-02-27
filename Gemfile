@@ -3,5 +3,9 @@
 source "https://rubygems.org"
 
 gem 'jekyll'
-gem 'jekyll-wikirefs', group: :jekyll_plugins
-gem 'jekyll-commonmark', group: :jekyll_plugins
+
+group :jekyll_plugins do
+    gem 'jekyll-wikirefs'
+    gem 'jekyll-commonmark'
+    gem 'jekyll-titles-from-headings'
+end

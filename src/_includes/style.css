@@ -1,0 +1,65 @@
+::selection, ::-moz-selection {
+    color: black;
+    background-color: #ffb0c0;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: inherit;
+}
+
+:root {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 8px;
+}
+:focus-visible {
+    outline: solid 1px white;
+    outline-offset: 1px;
+}
+
+a, a:visited {
+    text-decoration: underline dotted;
+}
+a[target="_blank"] {
+    text-decoration: underline;
+}
+a:hover, a:focus-visible {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+}
+
+p,h1,h2,h3,h4,h5,h6 { margin-block: 1rem; }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+hr { margin-block: 0.5em; height: 1px; border: none; background-color: white; }
+
+/*
+h1:has(>hr) {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    justify-self: left;
+}
+h1>hr {
+    vertical-align: middle;
+    margin-block: 0;
+    margin-inline: 0.5em 0;
+    display: block;
+    width: 100%;
+    justify-self: stretch;
+    align-self: center;
+    background-color: #ffb0c0;
+}
+*/
