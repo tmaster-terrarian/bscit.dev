@@ -36,7 +36,12 @@ a:hover, a:focus-visible {
     color: black;
 }
 
-p,h1,h2,h3,h4,h5,h6 { margin-block: 1rem; }
+p,h1,h2,h3,h4,h5,h6 {
+    margin-block: 1rlh;
+}
+h1 {
+    line-height: 2rlh;
+}
 
 img {
     max-width: 100%;

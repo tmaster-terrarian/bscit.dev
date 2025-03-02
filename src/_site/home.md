@@ -2,7 +2,7 @@
 nav: "1"
 ---
 
-<!-- ![decorative header depicting the persona of bscit in a neutral pose, with a sombre expression on her face.](/legacy/images/cover-10-24-notext.png) -->
+![decorative header depicting the persona of bscit in a neutral pose, with a sombre expression on her face.](/media/images/cover.png)
 
 # home
 

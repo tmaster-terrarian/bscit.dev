@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/media/style-center.css">
 </head>
 <body {% if page.nav %}_nav-id="{{ page.nav }}"{% endif %}>
+    <main>
     {% include nav.html %}
     {% include anchor_headings.html html=content h_min=2 h_max=3 generateId="true" %}
     {% if page.collection == "wiki" %}
@@ -16,5 +17,7 @@
             {% include backlinks.html %}
         {% endif %}
     {% endif %}
+    </main>
+    {% include footer.html %}
 </body>
 </html>
