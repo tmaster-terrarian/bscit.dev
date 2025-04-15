@@ -51,6 +51,9 @@ collections:
   site:
     output: true
     permalink: /site/:title:output_ext
+  articles:
+    output: true
+    permalink: /site/:title:output_ext
 
 baseurl: ""
 

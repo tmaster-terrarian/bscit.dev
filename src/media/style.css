@@ -37,18 +37,36 @@ a:hover, a:focus-visible {
 }
 
 p,h1,h2,h3,h4,h5,h6 {
-    margin-block: 1rlh;
+    margin-block: 1rem;
 }
 h1 {
-    line-height: 2rlh;
+    line-height: 2rem;
 }
 
-img {
-    max-width: 100%;
+main img {
+    display: inline-block;
+    width: 100%;
     height: auto;
 }
+main figure:has(>img) {
+    line-height: 0;
+    margin-block: 2rem;
+    figcaption {
+        line-height: 1rem;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    figcaption>span:nth-child(1) {
+        font-weight: bold;
+    }
+}
+main figure:has(>img):has(>figcaption) {
+    margin-block-end: 1rem;
+}
 
-hr { margin-block: 0.5em; height: 1px; border: none; background-color: white; }
+hr { margin-block: 0.5rem; height: 1px; border: none; background-color: white; }
 
 /*
 h1:has(>hr) {
@@ -68,3 +86,22 @@ h1>hr {
     background-color: #ffb0c0;
 }
 */
+
+body>main {
+    >div.grid {
+        list-style-type: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rch 0.5rem;
+        gap: 2rch 1rem;
+    }
+    >div.grid[data-cols="1"] { grid-template-columns: repeat(1, 1fr); }
+    >div.grid[data-cols="2"] { grid-template-columns: repeat(2, 1fr); }
+    >div.grid[data-cols="3"] { grid-template-columns: repeat(3, 1fr); }
+    >div.grid[data-cols="4"] { grid-template-columns: repeat(4, 1fr); }
+    >div.grid[data-cols="5"] { grid-template-columns: repeat(5, 1fr); }
+    >div.grid[data-cols="6"] { grid-template-columns: repeat(6, 1fr); }
+    >div.grid[data-cols="7"] { grid-template-columns: repeat(7, 1fr); }
+    >div.grid[data-cols="8"] { grid-template-columns: repeat(8, 1fr); }
+}

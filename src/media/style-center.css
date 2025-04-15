@@ -13,7 +13,11 @@ body {
 body>main {
     grid-area: body;
     background-color: black;
-    padding: 1rem 2ch 1rlh;
+    padding: 1rem 2ch 0;
+
+    >p {
+        max-width: 80ch;
+    }
 }
 body>footer {
     grid-area: footer;
