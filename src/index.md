@@ -12,7 +12,7 @@ layout: basic
     }
     footer {
         position: absolute;
-        right: 20px;
+        right: 15px;
         bottom: 15px;
     }
     a.n {
@@ -22,6 +22,26 @@ layout: basic
     }
     a.n:hover {
         text-decoration: underline dotted;
+    }
+    .webring {
+        position: absolute;
+        left: 0;
+        top: 100vh;
+        width: 100vw;
+        text-align: center;
+        padding: 5px 0;
+        /* background-image: url('/media/images/dither.png');
+        background-repeat: both; */
+        background-color: #c0c0c0;
+        color: black;
+        border-top: 1px solid white;
+    }
+    .arrow {
+        position: absolute;
+        transform: translate(-50%, 0);
+        left: 50vw;
+        bottom: 15px;
+        opacity: 50%;
     }
 </style>
 
@@ -33,3 +53,8 @@ layout: basic
 <footer>
     <a href="https://github.com/tmaster-terrarian/bscit.dev">source</a>
 </footer>
+
+<span class="arrow">(pst, scroll down)</span>
+<div class="webring">
+    <script src="https://transring.neocities.org/ring.js"></script>
+</div>
