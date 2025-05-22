@@ -26,3 +26,6 @@ I can say that I have been quite comfortable without it for almost 3 months now.
 When someone switches off of a corporate solution, it puts a small wound into the oppressive system that we live in. You disappear off of their lists and analytics. completely separated from their perfect little box. They hate people who decide to leave because of this. People who are self employed and only get paid in cash, people who go out of their way to create free and effective solutions for things normally high priced, people who pirate and uncover lost media, people who share their wealth with others, are all similarly dangerous to the system, because they defy the hierarchy and structure.
 
 You can make a difference by looking deeper for alternatives that are by the people, for the people. If you share similar experiences you should feel a drive to make a difference in your own life, and by extension, the rest of your community will benefit too.
+
+<br>
+2025-04-15
