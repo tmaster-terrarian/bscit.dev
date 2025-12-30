@@ -1,0 +1,18 @@
+
+
+<header :is="pagehead">
+  <time class="dateline">{ formatDate(date) }</time>
+
+  <script>
+    formatDate(date) {
+      return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      })
+    }
+  </script>
+</header>
+
+<span :is="House" class="house">House</span>
+<span :is="house" class="house">house</span>

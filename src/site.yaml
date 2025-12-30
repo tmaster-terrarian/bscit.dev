@@ -1,0 +1,49 @@
+meta:
+  title: bscit.dev
+  title_template: %s - bscit.dev
+  author: bscit
+  site_name: bscit
+  robots: noarchive
+
+site:
+  origin: https://bscit.dev
+  skip: [.vscode, "*.sh"]
+
+rss:
+  enabled: true
+  title: bscit.dev
+  description: bscit's published writing
+  collection: blog
+
+design:
+  inline_css: true
+
+collections:
+  blog:
+    include: [site/writing/]
+    require: [title, date]
+    skip: [draft]
+    sort: date desc
+  recipes_meals:
+    include: [site/recipes/meals/]
+    require: [title]
+    skip: [hide]
+    sort: title
+  recipes_sides:
+    include: [site/recipes/sides/]
+    require: [title]
+    skip: [hide]
+    sort: title
+  recipes_desserts:
+    include: [site/recipes/desserts/]
+    require: [title]
+    skip: [hide]
+    sort: title
+  recipes_all:
+    include: [site/recipes/]
+    require: [title]
+    skip: [hide]
+    sort: title
+
+content:
+  heading_ids: true

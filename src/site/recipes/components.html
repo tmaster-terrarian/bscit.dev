@@ -1,0 +1,12 @@
+<p :is="info">
+  <span class="dim"><span :if="time_to_cook">{ time_to_cook }</span><span :if="tags && time_to_cook"> - </span><span :if="tags">{ tags }</span></span>
+</p>
+
+<div :is="see">
+  <h2>also see</h2>
+  <ul>
+    <li :each="url in links">
+      <a href="/site/recipes/{ url }">{ url }</a>
+    </li>
+  </ul>
+</div>

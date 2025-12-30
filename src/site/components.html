@@ -1,0 +1,148 @@
+<div :is="bloglist" class="grid no-margin" data-cols="2">
+    <div :each="page in blog" class="project">
+        <a href="{ page.url }">
+            <h3><span class="dim"><time>{ formatDate(page.date) }</time></span><b>{{ colorizeSelectedText(page.title) }}</b></h3>
+            <p>{{ colorizeSelectedText(markdown(page.description)) }}</p>
+        </a>
+    </div>
+    <script>
+        formatDate(date) {
+            return new Date(date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            })
+        }
+        colorizeSelectedText(str) {
+            const result = str
+                .split(" ")
+                .map((word) => {
+                    word = word.replace("labyrinth", "<span class=\"labyrinth\">labyrinth</span>");
+                    word = word.replace("Labyrinth", "<span class=\"labyrinth\">Labyrinth</span>");
+                    if(str.includes('House of Leaves'))
+                        word = word.replace("House", "<span class=\"house\">House</span>");
+                    return word;
+                })
+                .join(" ");
+            return result;
+        }
+    </script>
+</div>
+
+<div :is="bloglist-home" class="grid no-margin" data-cols="1">
+    <div :each="page in blog" class="project small">
+        <a href="{ page.url }">
+            <h3><span class="dim"><time>{ formatDate(page.date) }</time></span><b>{{ colorizeSelectedText(page.title) }}</b></h3>
+        </a>
+    </div>
+    <script>
+        formatDate(date) {
+            return new Date(date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            })
+        }
+        colorizeSelectedText(str) {
+            const result = str
+                .split(" ")
+                .map((word) => {
+                    word = word.replace("labyrinth", "<span class=\"labyrinth\">labyrinth</span>");
+                    word = word.replace("Labyrinth", "<span class=\"labyrinth\">Labyrinth</span>");
+                    if(str.includes('House of Leaves'))
+                        word = word.replace("House", "<span class=\"house\">House</span>");
+                    return word;
+                })
+                .join(" ");
+            return result;
+        }
+    </script>
+</div>
+
+<div :is="bio" class="about">
+    <img src="/media/images/profile-2025-1.png">
+    <div>
+        <p>to put it simply, i am an <a href="https://autisticgirlsnetwork.org/knowledge_base/audhd/" target="_blank">AuDHD</a>, nonbinary artist who enjoys making things.</p>
+        <p>i create <a href="https://brandur.org/small-sharp-tools" target="_blank">small, sharp tools</a> to solve my own problems and workflows, love to tinker with software, and apire to create videogames as a career. at the moment, i am building up a resume to be able to apply for jobs, but in the meantime i am studying and creating art and games at my own pace.</p>
+    </div>
+</div>
+
+<span :is="labyrinth" class="labyrinth">labyrinth</span>
+<span :is="Labyrinth" class="labyrinth">Labyrinth</span>
+
+<nav :is="toc">
+  <h3>Table of contents</h3>
+  <ul>
+    <li :each="heading in tocHeadings">
+      <a href="#{ heading.id }">{ heading.text }</a>
+    </li>
+  </ul>
+
+  <script>
+    // Filter to show only h2 headings
+    this.tocHeadings = this.headings.filter(h => h.level == 2)
+  </script>
+</nav>
+
+<nav :is="breadcrumbs">
+    <!-- <a href="/site/home">..</a> -->
+    <span :each="crumb in breadcrumbs"><span class="dim"> /</span><a href="/{ crumb.url }">{ crumb.text }</a></span>
+    <span :if="slug"><span class="dim"> /</span><span>{ slug }</span></span>
+    <script>
+        this.breadcrumbs = getBreadcrumbs(this.dir);
+        function getBreadcrumbs(dir)
+        {
+            dir = dir.replace('site/', '');
+            const isDirectory = dir.endsWith('/');
+            /**@type {[]} */
+            const split = dir.split('/');
+            if(isDirectory)
+            {
+                split[split.length - 1] = split[split.length - 1] + '/'
+            }
+            const breadcrumbBits = [];
+            for(let i = 0; i < split.length; i++)
+            {
+                let obj = {};
+                obj.text = split[i];
+                obj.url = 'site/' + split.slice(0, i + 1).join('/');
+                breadcrumbBits.push(obj);
+            }
+            return breadcrumbBits;
+        }
+    </script>
+</nav>
+
+<details open :is="recipe-list-meals">
+    <summary class="big">meals</summary>
+    <div class="grid" data-cols="2">
+        <div :each="page in recipes_meals" class="project">
+            <a href="{ page.url }">
+                <h3><span class="dim"><span :if="page.time_to_cook">{ page.time_to_cook }</span><span :if="page.tags && page.time_to_cook"> - </span><span :if="page.tags">{ page.tags }</span></span><b>{ page.title }</b></h3>
+                <p :if="page.desc">{{ markdown(page.description) }}</p>
+            </a>
+        </div>
+    </div>
+</details>
+<details open :is="recipe-list-sides">
+    <summary class="big">sides</summary>
+    <div class="grid" data-cols="2">
+        <div :each="page in recipes_sides" class="project">
+            <a href="{ page.url }">
+                <h3><span class="dim"><span :if="page.time_to_cook">{ page.time_to_cook }</span><span :if="page.tags && page.time_to_cook"> - </span><span :if="page.tags">{ page.tags }</span></span><b>{ page.title }</b></h3>
+                <p :if="page.desc">{{ markdown(page.description) }}</p>
+            </a>
+        </div>
+    </div>
+</details>
+<details open :is="recipe-list-desserts">
+    <summary class="big">desserts</summary>
+    <div class="grid" data-cols="2">
+        <div :each="page in recipes_desserts" class="project">
+            <a href="{ page.url }">
+                <h3><span class="dim"><span :if="page.time_to_cook">{ page.time_to_cook }</span><span :if="page.tags && page.time_to_cook"> - </span><span :if="page.tags">{ page.tags }</span></span><b>{ page.title }</b></h3>
+                <p :if="page.desc">{{ markdown(page.description) }}</p>
+            </a>
+        </div>
+    </div>
+</details>
