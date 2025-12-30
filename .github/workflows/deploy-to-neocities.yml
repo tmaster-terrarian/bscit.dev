@@ -29,7 +29,7 @@ jobs:
     - name: install nuekit
       run: bun install --global nuekit
 
-    # Outputs to the './.dist' directory by default
+    # Outputs to the './src/.dist' directory by default
     - name: nue build
       run: nue build
 
@@ -38,7 +38,7 @@ jobs:
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: true
-        dist_dir: .dist
+        dist_dir: src/.dist
 
     # - name: Deploy to nekoweb
     #   uses: deploy2nekoweb/deploy2nekoweb@v4
@@ -46,4 +46,4 @@ jobs:
     #     nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
     #     nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
     #     nekoweb-folder: '/'
-    #     directory: '.dist'
+    #     directory: 'src/.dist'
