@@ -49,6 +49,9 @@
     background-color: #18181a;
     color: white;
   }
+  a:active {
+    background-color: #141415;
+  }
 
   .float-left {
     float: left;
@@ -59,7 +62,7 @@
 
   /* global layout & styling */
   body {
-    background-color: #101010;
+    /* background-color: #080808; */
 
     line-height: 1.5;
     color: var(--base-200);
@@ -124,6 +127,17 @@
         justify-content: center;
         column-gap: 2ch;
       }
+    }
+  }
+
+  @media (max-width: 70ch) {
+    body {
+      background-color: black;
+      width: 100%;
+      max-width: 84ch;
+      margin: 0 auto;
+      grid-template-areas: 'header' 'body' 'footer';
+      grid-template-columns: 100%;
     }
   }
 
@@ -337,6 +351,9 @@
 
       &:hover, &:focus-visible {
         background-color: #18181a;
+      }
+      &:active {
+        background-color: #141415;
       }
       &.big {
         font-weight: bold;
