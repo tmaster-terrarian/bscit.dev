@@ -8,12 +8,13 @@
     <link rel="stylesheet" type="text/css" href="/media/frontpage.css">
     <link rel="alternate" type="application/rss+xml" title="bscit.dev" href="/feed.xml">
     <meta name="robots" content="noarchive">
-</head>
-<body>
     <style>
+        html {
+            overflow-x: hidden;
+        }
         menu {
             transform: translate(-50%, -50%);
-            position: absolute;
+            position: fixed;
             left: 50vw;
             top: 50vh;
         }
@@ -35,11 +36,26 @@
             left: 0;
             top: 100vh;
             width: 100vw;
+            min-height: 65px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1ch;
             text-align: center;
             padding: 5px 0;
-            background-color: #c0c0c0;
-            color: black;
-            border-top: 1px solid white;
+            background-color: #0004;
+            backdrop-filter: blur(3px);
+            color: white;
+            border-top: 1px solid #fff1;
+            >a {
+                display: flex;
+                align-items: center;
+                >img {
+                    width: 98px;
+                    height: 14px;
+                    image-rendering: pixelated;
+                }
+            }
         }
         .arrow {
             position: absolute;
@@ -47,9 +63,157 @@
             left: 50vw;
             bottom: 15px;
             opacity: 50%;
+            font-size: 75%;
+        }
+        pre {
+            user-select: none;
+            color: #404040;
+            z-index: -1;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transform-origin: center;
+            line-height: 10px;
+            letter-spacing: -1px;
+            font-family: inherit;
+            margin: 0;
+        }
+        .textDimensionCalculation {
+            position: absolute;
+            visibility: hidden;
+            height: auto;
+            width: auto;
+            white-space: nowrap;
+        }
+        #snowflakes {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
         }
     </style>
+    <script>
+        // ty stack overflow <3
+        var calculateWordDimensions = function(text, classes, escape) {
+            classes = classes || [];
 
+            if (escape === undefined) {
+                escape = true;
+            }
+
+            classes.push('textDimensionCalculation');
+
+            var div = document.createElement('div');
+            div.setAttribute('class', classes.join(' '));
+
+            if (escape) {
+                div.innerText = text;
+            } else {
+                div.innerHTML = text;
+            }
+
+            document.body.appendChild(div);
+
+            var dimensions = {
+                width : div.getBoundingClientRect().width,
+                height : div.getBoundingClientRect().height
+            };
+
+            div.parentNode.removeChild(div);
+
+            return dimensions;
+        };
+
+        const delay = 4000;
+        document.addEventListener("DOMContentLoaded", event => setTimeout(() => {
+            console.log("creating snowflakes");
+
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+            window.addEventListener('resize', event => {
+                for(let flake of snowflakes)
+                    flake.__leftOrig += 0.5 * (window.innerWidth - windowWidth);
+
+                windowWidth = window.innerWidth;
+                windowHeight = window.innerHeight;
+            });
+
+            const charSize = calculateWordDimensions('0');
+
+            const wind = 0.2;
+
+            const snowflakeTransform = 'translate(-50%, -50%)';
+            const snowflakeShape = `
+ \\|/
+&ndash;&ndash;+&ndash;&ndash;
+ /|\\`;
+
+            /** @param {HTMLPreElement} flake */
+            function resetFlake(flake)
+            {
+                flake.__random = (Math.random() * 2) - 1;
+                flake.__top = -6 * charSize.height;
+                flake.__left = Math.floor((Math.random() * windowWidth + (-wind * charSize.width * (windowHeight / charSize.height))) / charSize.width) * charSize.width;
+                flake.__leftOrig = flake.__left;
+                flake.__rotDir = (Math.random() * 2) - 1;
+                flake.__rot = 0;
+                flake.style.top = `${flake.__top}px`;
+                flake.style.left = `${flake.__left}px`;
+                flake.style.transform = snowflakeTransform;
+            }
+
+            const snowflakeCount = Math.min(Math.max(Math.floor(windowWidth / 60), 10), 25);
+            /** @type {HTMLPreElement[]} */
+            const snowflakes = [];
+            const snowflakeHolder = document.getElementById('snowflakes') || document.body;
+
+            // init snowflakes
+            for(let i = 0; i < snowflakeCount; i++)
+            {
+                let flake = document.createElement("pre");
+                flake.innerHTML = snowflakeShape;
+                resetFlake(flake);
+                snowflakes[i] = flake;
+                snowflakeHolder.appendChild(flake);
+
+                flake.__mobile = false;
+                setTimeout(() => {
+                    flake.__mobile = true;
+                }, 1000 * i)
+            }
+
+            let t = 0;
+
+            function update()
+            {
+                for(let flake of snowflakes)
+                {
+                    if(!flake.__mobile)
+                        continue;
+
+                    if(flake.__top > windowHeight + charSize.height * 4)
+                        resetFlake(flake);
+
+                    if((wind > 0 && flake.__left > windowWidth + charSize.height * 4) || (wind < 0 && flake.__left < -charSize.height * 4))
+                        resetFlake(flake);
+
+                    flake.__top += charSize.height / 2;
+                    flake.__leftOrig += wind * charSize.width;
+                    flake.__left = flake.__leftOrig + (Math.sin(t / 10 + flake.__random) * charSize.width * 2 * (1 + Math.abs(flake.__random) * (flake.__top / windowHeight)) * Math.sign(flake.__random));
+                    flake.style.top = `${flake.__top}px`;
+                    flake.style.left = `${flake.__left}px`;
+
+                    flake.__rot += 5 * flake.__rotDir;
+                    flake.style.transform = `${snowflakeTransform} rotate(${flake.__rot}deg)`;
+                }
+                t++;
+            }
+
+            setInterval(update, 50);
+        }
+    ,delay));</script>
+</head>
+<body>
     <menu>
         <a href="./site/home" class="n">
             <h1>bscit.dev</h1>
@@ -59,9 +223,12 @@
         <a href="https://github.com/tmaster-terrarian/bscit.dev">source</a>
     </footer>
 
-    <span class="arrow">(pst, scroll down)</span>
+    <div id="snowflakes"></div>
+
+    <span class="arrow">(hey, you there! there's some extra stuff down here)</span>
     <div class="webring">
         <script src="https://transring.neocities.org/ring.js"></script>
+        <script type="text/javascript" src="https://counter.websiteout.com/js/35/7/8300/1"></script>
     </div>
 </body>
 </html>

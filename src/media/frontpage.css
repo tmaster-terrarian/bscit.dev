@@ -17,7 +17,6 @@
     color: white;
     font-family: monospace;
     font-size: 14px;
-    padding: 8px;
 }
 :focus-visible {
     outline: solid 1px white;
