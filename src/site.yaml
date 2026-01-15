@@ -11,19 +11,24 @@ site:
 
 rss:
   enabled: true
-  title: bscit.dev
+  title: bscit book
   description: bscit's published writing
-  collection: blog
+  collection: writing
 
 design:
   inline_css: true
 
 collections:
-  blog:
+  writing:
     include: [site/writing/]
     require: [title, date]
     skip: [draft]
     sort: date desc
+  log_2026:
+    include: [site/log/2026/]
+    require: [title]
+    skip: [draft]
+    sort: date title
   recipes_meals:
     include: [site/recipes/meals/]
     require: [title]

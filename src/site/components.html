@@ -1,5 +1,5 @@
 <div :is="bloglist" class="grid no-margin" data-cols="2">
-    <div :each="page in blog" class="project">
+    <div :each="page in writing" class="project">
         <a href="{ page.url }">
             <h3><span class="dim"><time>{ formatDate(page.date) }</time></span><b>{{ colorizeSelectedText(page.title) }}</b></h3>
             <p>{{ colorizeSelectedText(markdown(page.description)) }}</p>
@@ -30,7 +30,7 @@
 </div>
 
 <div :is="bloglist-home" class="grid no-margin" data-cols="1">
-    <div :each="page in blog" class="project small">
+    <div :each="page in writing" class="project small">
         <a href="{ page.url }">
             <h3><span class="dim"><time>{ formatDate(page.date) }</time></span><b>{{ colorizeSelectedText(page.title) }}</b></h3>
         </a>
@@ -146,3 +146,31 @@
         </div>
     </div>
 </details>
+
+<div :is="log">
+    <h3>2026</h3>
+    <div class="grid no-margin" data-cols="2">
+        <div :each="page in log_2026" class="project small">
+            <a href="{ page.url }"><h3>{ month(page.slug) }</h3></a>
+        </div>
+    </div>
+    <script>
+        this.month = function(num) {
+            switch(num) // idk why this is bugged in nue, i shouldn't be required to put a comment here to make it work lol
+            {
+                case '01': return 'jan';
+                case '02': return 'feb';
+                case '03': return 'mar';
+                case '04': return 'apr';
+                case '05': return 'may';
+                case '06': return 'jun';
+                case '07': return 'jul';
+                case '08': return 'aug';
+                case '09': return 'sep';
+                case '10': return 'oct';
+                case '11': return 'nov';
+                case '12': return 'dec';
+            }
+        }
+    </script>
+</div>

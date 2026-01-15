@@ -275,6 +275,10 @@
     color: var(--base-400);
   }
 
+  h3:has(+.grid) {
+    margin-block-end: 0;
+  }
+
   /* major listings */
   .grid>.project {
     >a {

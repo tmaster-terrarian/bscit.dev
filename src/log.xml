@@ -1,0 +1,17 @@
+<rss version="2.0">
+  <channel>
+    <link>https://bscit.dev</link>
+    <title>bscit.dev</title>
+    <description>bscit.dev log updates</description>
+    <item>
+      <title>January 2026</title>
+      <pubDate>2026-02-01</pubDate>
+      <link>https://bscit.dev/site/writing/house-of-leaves</link>
+      <dc:creator>bscit</dc:creator>
+      <description>
+        Hello! This is what happened to me during the month of January.
+        
+      </description>
+    </item>
+  </channel>
+</rss>
