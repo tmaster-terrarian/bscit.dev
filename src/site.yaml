@@ -7,7 +7,7 @@ meta:
 
 site:
   origin: https://bscit.dev
-  skip: [.vscode, "*.sh"]
+  skip: [.vscode, "*.sh", .git]
 
 rss:
   enabled: true
