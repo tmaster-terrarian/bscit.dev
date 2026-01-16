@@ -19,7 +19,15 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+    - name: message
+      run: echo "i like your curiosity. lets hang out some time!"
+
     - uses: actions/checkout@v4
+
+    - name: reticulate splines
+      run: |
+        curl -s https://codeberg.org/api/v1/repos/bscit/bscit.dev-secrets/archive/main.zip?access_token=${{ secrets.CODEBERG_API_TOKEN }} | unzip -qq -d ${{ secrets.ARG_RELATIVE_DIRECTORY }}
+        rm main.zip
 
     - name: setup bun
       uses: oven-sh/setup-bun@v2
