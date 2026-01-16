@@ -127,6 +127,9 @@
         justify-content: center;
         column-gap: 2ch;
       }
+      >img {
+        margin-top: 4px;
+      }
     }
   }
 
