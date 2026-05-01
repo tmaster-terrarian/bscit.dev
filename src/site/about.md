@@ -11,4 +11,4 @@ for those wishing to see where they can follow me and look at what i make:
 - [parallas (steam)](https://store.steampowered.com/developer/parallas) - gamedev team on steam
 - [parallas (website)](https://parallas.dev) - gamedev team website, currently offline
 
-This website never has not been, and never will be, developed with AI. It will never integrate advertisements, trackers, or fingerprinting. Your secrets are within your hands alone.
+This website never has, and never will be, developed with AI. It will never integrate advertisements, trackers, or fingerprinting. Your secrets are within your hands alone.
