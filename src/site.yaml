@@ -11,9 +11,9 @@ site:
 
 rss:
   enabled: true
-  title: bscit book
-  description: bscit's published writing
-  collection: writing
+  title: bscit updates
+  description: bscit's log of activities
+  collection: log
 
 design:
   inline_css: true
@@ -24,11 +24,10 @@ collections:
     require: [title, date]
     skip: [draft]
     sort: date desc
-  log_2026:
-    include: [site/log/2026/]
-    require: [title]
+  log:
+    include: [site/log/]
     skip: [draft]
-    sort: date title
+    sort: slug desc
   recipes_meals:
     include: [site/recipes/meals/]
     require: [title]

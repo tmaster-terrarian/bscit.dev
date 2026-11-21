@@ -1,4 +1,4 @@
 # log
-[RSS feed](/log.xml)
+[RSS feed](/feed.xml)
 
-[log]
+[log-full]

@@ -1,0 +1,13 @@
+<header :is="pagehead">
+  <time class="dateline">{ formatDate(slug) }</time>
+
+  <script>
+    formatDate(date) {
+      return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      })
+    }
+  </script>
+</header>

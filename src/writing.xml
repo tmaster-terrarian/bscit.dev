@@ -1,0 +1,31 @@
+<rss version="2.0">
+  <channel>
+    <link>https://bscit.dev</link>
+    <title>bscit.dev</title>
+    <description>bscit's published writing</description>
+    <item>
+      <title>House of Leaves (retrospective)</title>
+      <description>
+        A personal review and sort of postmortem after reading House of Leaves.
+      </description>
+      <pubDate>2025-12-27</pubDate>
+      <link>https://bscit.dev/site/writing/house-of-leaves</link>
+    </item>
+    <item>
+      <title>Open Source is Resistance</title>
+      <description>
+        My personal experience with Arch Linux, and how it links to the subversion of hierarchy
+      </description>
+      <pubDate>2025-04-15</pubDate>
+      <link>https://bscit.dev/site/writing/open-source-is-resistance</link>
+    </item>
+    <item>
+      <title>Social Media</title>
+      <description>
+        Leaving Twitter, life on the 'net, and the fuzzy future ahead
+      </description>
+      <pubDate>2024-10-21</pubDate>
+      <link>https://bscit.dev/site/writing/social-media</link>
+    </item>
+  </channel>
+</rss>

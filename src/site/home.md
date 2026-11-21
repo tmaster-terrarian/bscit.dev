@@ -11,7 +11,12 @@ At the very least, the distant echoes keep me from feeling alone as I explore th
 
 [more info & links](./about)
 
+## log
+[RSS feed](/feed.xml) [see all](./log)
+
+[log]
+
 ## writing
-[RSS feed](/feed.xml)
+[RSS feed](/writing.xml)
 
 [bloglist-home]

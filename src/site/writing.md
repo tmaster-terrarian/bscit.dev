@@ -1,4 +1,4 @@
 # writing
-[RSS feed](/feed.xml)
+[RSS feed](/writing.xml)
 
 [bloglist]
