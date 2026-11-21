@@ -5,6 +5,7 @@ for those wishing to see where they can follow me and look at what i make:
 - [bluesky](https://bsky.app/profile/bscit.dev) - art and personal posts (warning: im gay asf)
 - [newgrounds](https://bscit.newgrounds.com) - art and music (less updated than bluesky)
 - [vgen](https://vgen.co/bscit) - commissions! support if you wish :3
+- [modrinth](https://modrinth.com/user/bscit) - minecraft mods!
 - [youtube](https://youtube.com/@bscitdev) - videos
 - [codeberg](https://codeberg.org/bscit) - newer games and team projects (code)
 - [github](https://github.com/tmaster-terrarian) - older games and team projects (code)
