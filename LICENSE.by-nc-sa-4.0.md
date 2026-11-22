@@ -1,6 +1,6 @@
 The following repository files are licensed under the **Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** License:
 - Images (files formatted as any of the standard image formats, including but not limited to PNG and JPEG files)
-- Everything contained within the directories `/src/writing` and `/src/recipes`; not including the files named "components.html" or "index.css."
+- Everything contained within the directories `/src/site/log`, `/src/site/writing`, and `/src/site/recipes`; not including the files named "components.html" or "index.css."
 
 Files not included within the above list are otherwise licensed (see "./LICENSE").
 
